@@ -1,0 +1,9 @@
+site_name: Aether Developers
+theme: readthedocs
+nav:
+- Home: 'index.md'
+- Tina Guide:
+  - 'The Philosophy': 'intro/tina/philosophy.md'
+  - 'Getting Started': 'intro/tina/start.md'
+  - 'Main Features': 'intro/tina/core.md'
+  - 'Entity Component System': 'intro/tina/ecs.md'
