@@ -32,3 +32,48 @@ const Event = new EventEmitter<Events>
 
 Event.emit("onEvent", "Hello");
 ```
+
+### Await
+
+Events are asynchronous to their thread, this means that will run at the same time as your other code. Sometimes we want to await on some events until they are finished to proceed, even though, this isn't intended (as the do's chain solves that problem). We give you the opportunity to await on events until the final result is given.
+
+```ts
+// File 2
+interface Events {
+    onThis: (message: string) => string;
+}
+
+export const Event = new EventEmitter<Events>;
+    
+Event
+    .when("onThis")
+    .do((message: string) => {
+        return `${message}, world!`
+    })
+    .do((message: string) => {
+        return `${message} Wow, this is amazing, a new world!`
+    })
+    .do((message: string) => {
+        return `${message} I don't feel like there's much to explore.`
+    })
+    .do((message: string) => {
+        return `${message} Well, I guess this is it.`
+    })
+    .await();
+
+print("Hello, world");
+
+// File 2
+import { Event } from "...";
+
+Event.emit("Hello");
+
+/**
+ * Hello, world!
+ * Hello, world! Wow this is amazing, a new world!
+ * Hello, world! Wow this is amazing, a new world! I don't feel like there's much to explore.
+ * Hello, world! Wow this is amazing, a new world! I don't feel like there's much to explore. Well, I guess this is it.
+ * 
+ * Hello, world!
+ */
+```
