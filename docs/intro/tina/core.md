@@ -1,12 +1,16 @@
+Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+{ .annotate }
+
+1.  :man_raising_hand: I'm an annotation! I can contain `code`, __formatted
+    text__, images, ... basically anything that can be expressed in Markdown.
+
 # Main Usage
 
 ## Game
 
 Tina requires certain initialization on the Server and the Client.
 
-`index.server.ts`
-
-```typescript
+```typescript title="index.server.ts" linenums="1"
 import Tina from '@rbxts/tina';
 
 import 'lib/game'; // Initialize Game.
@@ -16,13 +20,15 @@ import 'lib/ecs'; // Initalize Entity Component System.
 import { User } from 'shared/lib/game/user';
 
 /* Starts the Game Processes */
-Tina.startGame("GuessTheNumber");
 Tina.setUserClass(User); // Sets the custom user class.
+Tina.startGame("GuessTheNumber"); // (1)!
 ```
+
+1. This initializes the game and starts all processes. [Tina.startGame](/docs/api/Tina/#startGame)
 
 `index.client.ts`
 
-```typescript
+```typescript title="index.client.ts" linenums="1"
 import Tina from '@rbxts/tina';
 
 import 'lib/game'; // Initialize Game.

@@ -1,8 +1,53 @@
 site_name: Aether Developers
-theme: readthedocs
+theme:
+  name: material
+  palette:
+    scheme: slate
+  features:
+  - announce.dismiss
+  - content.code.annotate
+  - content.tabs.link
+  - content.tooltips
+  # - header.autohide
+  # - navigation.expand
+  - navigation.indexes
+  # - navigation.instant
+  # - navigation.prune
+  - navigation.sections
+  - navigation.tabs
+  # - navigation.tabs.sticky
+  - navigation.top
+  - navigation.tracking
+  - search.highlight
+  - search.share
+  - search.suggest
+  - toc.follow
+  # - toc.integrate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - def_list
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 nav:
 - Home: 'index.md'
+
+- API:
+  - 'Getting Started': 'api/api_docs.md'
+  - 'Tina': 'api/tina.md'
+  - 'Process': 'api/process.md'
+  - 'EventEmitter': 'api/event_emitter.md'
+  - 'EventListener': 'api/event_listener.md'
 
 - Tina Guide:
   - 'The Philosophy': 'intro/tina/philosophy.md'

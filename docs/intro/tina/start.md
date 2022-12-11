@@ -1,4 +1,4 @@
-# Tina Game Template
+# Creating an Experience with Tina
 
 ## Commands
 
