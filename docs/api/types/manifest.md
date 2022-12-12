@@ -1,3 +1,7 @@
+---
+icon: material/file-document-outline
+---
+
 ## :material-file-document-outline: Manifest
 
 The Manifest is a file you need to have in your workspace whenever working with Tina.

@@ -1,4 +1,8 @@
-## :material-cube-outline: EventEmitter
+---
+icon: material/cube
+---
+
+## :material-cube: EventEmitter
 
 ### :material-function-variant: **`#!typescript when(name?: string): EventListener`** { #markdown data-toc-label='when' }
 

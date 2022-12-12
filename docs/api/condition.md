@@ -1,4 +1,10 @@
-## :material-cube-scan: Condition
+---
+icon: material/package-variant-closed
+---
+
+#  
+
+## :material-file-document-outline: Condition
 
 `Condition` is a type defined as:
 ```ts

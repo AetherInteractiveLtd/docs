@@ -1,4 +1,6 @@
-A Process should operate as any core feature.
+---
+icon: material/cube
+---
 
 ## Using blank events
 
@@ -23,7 +25,7 @@ A blank event is used just like any other event, but the `.when()` is simply emp
         object.when(); // This listens to the `_default` event.
         ```
 
-## :material-cube-outline: EventListener
+## :material-cube: EventListener
 
 ### :material-function-variant: **`#!typescript do(callback: (args: ...unknown[]) => unknown): this`** { #markdown data-toc-label='do' }
 

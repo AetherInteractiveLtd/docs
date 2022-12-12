@@ -1,3 +1,9 @@
+---
+icon: material/package-variant-closed
+---
+
+# 
+
 ## :material-package-variant-closed: Tina
 
 ### :material-function-variant: **`#!typescript registerGame(name: string, manifest: Manifest): void`** { #markdown data-toc-label='registerGame' }

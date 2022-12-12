@@ -9,20 +9,20 @@ theme:
   - content.tabs.link
   - content.tooltips
   # - header.autohide
-  # - navigation.expand
+  - navigation.expand
   - navigation.indexes
   # - navigation.instant
   # - navigation.prune
   - navigation.sections
   - navigation.tabs
-  # - navigation.tabs.sticky
+  - navigation.tabs.sticky
   - navigation.top
   - navigation.tracking
   - search.highlight
   - search.share
   - search.suggest
   - toc.follow
-  # - toc.integrate
+  - toc.integrate
 
 markdown_extensions:
   - admonition
@@ -49,9 +49,10 @@ nav:
 
 - API:
   - 'Getting Started': 'api/api_docs.md'
+  - 'API Detail': 'api/coverage.md'
   - 'Tina': 'api/tina.md'
-  - 'Process': 'api/process.md'
   - 'Condition': 'api/condition.md'
+  - 'Process': 'api/process.md'
   - 'EventEmitter': 'api/event_emitter.md'
   - 'EventListener': 'api/event_listener.md'
   - Extras:
