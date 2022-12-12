@@ -29,10 +29,15 @@ markdown_extensions:
   - pymdownx.details
   - attr_list
   - md_in_html
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - def_list
+  - tables
   - pymdownx.tabbed:
       alternate_style: true 
   - pymdownx.emoji:
@@ -46,8 +51,11 @@ nav:
   - 'Getting Started': 'api/api_docs.md'
   - 'Tina': 'api/tina.md'
   - 'Process': 'api/process.md'
+  - 'Condition': 'api/condition.md'
   - 'EventEmitter': 'api/event_emitter.md'
   - 'EventListener': 'api/event_listener.md'
+  - Extras:
+    - 'api/types/manifest.md'
 
 - Tina Guide:
   - 'The Philosophy': 'intro/tina/philosophy.md'

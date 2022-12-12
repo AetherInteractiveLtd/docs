@@ -2,7 +2,7 @@ A Process should operate as any core feature.
 
 ## :material-cube-outline: Process
 
-### :material-lightning-bolt: [**`<empty>`** :octicons-link-16:](event_listener.md/#blank "Using blank events...")
+### :material-lightning-bolt: [**`<empty>`** :octicons-link-16:](event_listener.md/#using-blank-events "Using blank events...")
 
 #### Event Parameters
 
