@@ -1,8 +1,12 @@
-site_name: Aether Developers
+site_name: Tina Framework
 theme:
   name: material
+  favicon: 'assets/icon.png'
+  logo: 'assets/docs_icon.png'
   palette:
     scheme: slate
+    primary: deep purple
+    accent: purple
   features:
   - announce.dismiss
   - content.code.annotate
@@ -23,6 +27,15 @@ theme:
   - search.suggest
   - toc.follow
   - toc.integrate
+
+plugins:
+  - tags
+  - blog:
+      enabled: true
+      post_date_format: full
+      post_url_date_format: yyyy
+      post_url_format: '{date}/{slug}'
+      authors: true
 
 markdown_extensions:
   - admonition
@@ -71,3 +84,5 @@ nav:
   - 'Networking': 'intro/tina/libraries/net/net.md'
 
   - 'Entity Component System': 'intro/tina/ecs.md'
+
+- Blog: 'blog/index.md'
