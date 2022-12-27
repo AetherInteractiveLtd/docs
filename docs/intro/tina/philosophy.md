@@ -10,6 +10,6 @@ The primary method of interacting with the game world is with a flavoured Entity
 
 ## Aether's Investment
 
-We at Aether have always wanted to build ideas beyond the typical technical scope of Roblox projects, here we found ourselves at an impasse where the engine simply wasn't powerful enough to support enough characters, a large enough scale, provide proper - compressed data-based networking.
+We at Aether have always wanted to build ideas beyond the typical technical scope of Roblox projects, here we found ourselves at an impasse where the engine simply wasn't powerful enough to support everything we needed it to on a client-server basis.
 
 Thus, we're spending a while working on Tina to facilitate our in-house projects and any other dreams people might have.

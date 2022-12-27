@@ -1,5 +1,10 @@
 # Events
 
+!!! info "Guide Page"
+
+    Information on this page might be outdated, and is **not** an up-to-date API reference. This is a guide on how to use Events.
+    For documentation, please go to [:material-cube: EventEmitter](/docs/api/event_emitter) and [:material-cube: EventListener]().
+
 Events are a core library that is used all over Tina, incluiding Networking. Events are useful when it comes to binding callbacks to a unique identifier and emitting data to it.
 
 ```ts

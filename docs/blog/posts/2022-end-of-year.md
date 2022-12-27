@@ -4,8 +4,11 @@ authors:
  - luna
 tags:
  - dev
-description: "The history of Tina"
+description: "The History of Tina"
 ---
 
-# Hello world!
+# The History of Tina
+
+This is an ever-changing synopsis of the history of Tina, how it came to be, the stages of its development, and its future.
+
 ...
