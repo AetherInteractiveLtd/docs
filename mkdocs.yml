@@ -28,6 +28,12 @@ theme:
   - toc.follow
   - toc.integrate
 
+extra_css:
+  - stylesheets/extra.css
+
+repo_url: https://github.com/AetherInteractiveLtd/Tina
+repo_name: Aether/Tina
+
 plugins:
   - tags
   - blog:
