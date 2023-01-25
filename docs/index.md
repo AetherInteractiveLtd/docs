@@ -1,8 +1,3 @@
 # Welcome to Aether's Developer Documentation
 
-## Glossary
-
-#### Tina
-
-* **[Creating a Project with Tina](intro/tina/start.md "Tina Game Template")**
-*
+<a href="/api/api_docs/"><img src="./assets/docs_icon.png" style="width: 200px;" /></a>
