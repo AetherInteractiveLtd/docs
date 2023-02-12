@@ -44,6 +44,8 @@ plugins:
       authors: true
 
 markdown_extensions:
+  - toc:
+      toc_depth: 3
   - admonition
   - pymdownx.details
   - attr_list
@@ -90,5 +92,7 @@ nav:
   - 'Networking': 'intro/tina/libraries/net/net.md'
 
   - 'Entity Component System': 'intro/tina/ecs.md'
+
+- Style Guide: 'intro/styleguide.md'
 
 - Blog: 'blog/index.md'
