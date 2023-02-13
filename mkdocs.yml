@@ -75,6 +75,11 @@ nav:
   - 'Process': 'api/process.md'
   - 'EventEmitter': 'api/event_emitter.md'
   - 'EventListener': 'api/event_listener.md'
+  - ECS:
+    - 'Component': 'api/ecs/component.md'
+    - 'Query': 'api/ecs/query.md'
+    - 'System': 'api/ecs/system.md'
+    - 'World': 'api/ecs/world.md'
   - Extras:
     - 'api/types/manifest.md'
 
