@@ -44,6 +44,8 @@ plugins:
       authors: true
 
 markdown_extensions:
+  - toc:
+      toc_depth: 3
   - admonition
   - pymdownx.details
   - attr_list
@@ -101,5 +103,7 @@ nav:
     - 'Best Practices': 'intro/tina/ecs/best-practices.md'
 
   - 'Networking': 'intro/tina/libraries/net/net.md'
+
+- Style Guide: 'intro/styleguide.md'
 
 - Blog: 'blog/index.md'

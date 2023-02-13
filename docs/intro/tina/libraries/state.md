@@ -51,11 +51,11 @@ pass it through to a WeatherManager to play some weather effects.
 ```typescript
 // client.ts
 
-sharedState.weather.subscribe((weather) => {
+sharedState.weather.when((weather) => {
     WeatherManager.setWeather(weather)
 })
 
-sharedState.inventory.subscribe(LocalPlayer, (items) => {
+sharedState.inventory.when(LocalPlayer, (items) => {
     Inventory.setItems(items)
 })
 ```

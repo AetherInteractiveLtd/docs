@@ -1,0 +1,146 @@
+{
+	// Place your aetherdocs workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"PackageBodySpec": {
+		"scope": "markdown,md",
+		"body": [
+			"---",
+			"icon: material/package-variant-closed",
+			"---",
+			"",
+			"<!-- The line below is **not** a typo. -->",
+			"# ",
+			"",
+			"## :material-package-variant-closed: ${1:Tina}",
+			"",
+			"${1:Tina} is responsible for ${2:running your game!}",
+			"",
+			"### Events",
+			"",
+			"${3:Use Ctrl+Space then select eventspec.}",
+			"",
+			"---",
+			"",
+			"### Methods",
+			"",
+			"${4:Use Ctrl+Space then select functionspec.}",
+			"",
+			"---",
+			"",
+			"$5",
+			""
+		],
+		"prefix": "packagespec",
+		"description": "Create an empty package spec"
+	},
+	"EmptyEventSpec": {
+		"scope": "markdown,md",
+		"body": [
+			"### :material-lightning-bolt: [**`<empty>`** :octicons-link-16:](event_listener.md/#using-blank-events \"Using blank events...\")",
+			"",
+			"Fired whenever ${1:the world implodes}",
+			"",
+			"#### Event Parameters",
+			"",
+			"$2"
+		],
+		"prefix": "emptyeventspec",
+		"description": "Create an empty event spec"
+	},
+	"EventSpec": {
+		"scope": "markdown,md",
+		"body": [
+			"### :material-lightning-bolt: **`${1:name}`**",
+			"",
+			"Fired whenever ${2:Daft Punk reunite}",
+			"",
+			"#### Event Parameters",
+			"",
+			"${3:Use Ctrl+Space then select parameter.}"
+		],
+		"prefix": "eventspec",
+		"description": "Create an empty event spec"
+	},
+	"FunctionSpec": {
+		"scope": "markdown,md",
+		"body": [
+			"<!-- ${1:function name} -->",
+			"",
+			"### :material-function-variant: **`#!typescript ${1:func}(${2:str: string}): ${3:Promise<unknown>}`** { #markdown data-toc-label='${1:func}()' }",
+			"",
+			"#### Parameters",
+			"$4",
+			"",
+			"#### Returns",
+			"$5",
+			"",
+			"---",
+			"",
+			"$0"
+		],
+		"prefix": "functionspec",
+		"description": "Create the documentation for a function"
+	},
+	"ParameterSpec": {
+		"scope": "markdown,md",
+		"body": [
+			"`#!typescript ${1:foo}: ${2:unknown}`",
+			"",
+			": ${3:This parameter to the function is used for baboons...}"
+		],
+		"prefix": "parameter",
+		"description": "Create a parameter field for a function."
+	},
+	"TypedParameterSpec": {
+		"scope": "markdown,md",
+		"body": [
+			"[`#!typescript ${1:foo}: ${2:unknown}` :octicons-link-16:](${3:ref}.md)",
+			"",
+			": ${4:This parameter to the function is used for baboons...}"
+		],
+		"prefix": "parametertyped",
+		"description": "Create a linked parameter field for a function for complex or documented types."
+	},
+	"ReturnSpec": {
+		"scope": "markdown,md",
+		"body": [
+			"`#!typescript ${1:Promise}`",
+			"",
+			": ${3:This is a promise that contains the ... from the function.}"
+		],
+		"prefix": "return",
+		"description": "Create a parameter field for a function."
+	},
+	"TypedReturnSpec": {
+		"scope": "markdown,md",
+		"body": [
+			"[`#!typescript ${1:Promise}` :octicons-link-16:](${2:ref}.md)",
+			"",
+			": ${3:This is a promise that contains the ... from the function.}"
+		],
+		"prefix": "returntyped",
+		"description": "Create a linked parameter field for a function for complex or documented types."
+	},
+	"LinkedType": {
+		"scope": "markdown,md",
+		"body": [
+			"[`#!typescript ${1:Promise}` :octicons-link-16:](${2:promise}.md)"
+		],
+		"prefix": "linkedtype",
+		"description": "Create a linked parameter field for a function for complex or documented types."
+	}
+}

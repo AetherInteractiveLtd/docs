@@ -6,6 +6,8 @@ icon: material/cube
 
 ## :material-cube: Process
 
+### :material-lightning-bolt: Events
+
 ### :material-lightning-bolt: [**`<empty>`** :octicons-link-16:](event_listener.md/#using-blank-events "Using blank events...")
 
 #### Event Parameters
