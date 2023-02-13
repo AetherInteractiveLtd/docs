@@ -64,6 +64,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - footnotes
 
 nav:
 - Home: 'index.md'
@@ -76,6 +77,11 @@ nav:
   - 'Process': 'api/process.md'
   - 'EventEmitter': 'api/event_emitter.md'
   - 'EventListener': 'api/event_listener.md'
+  - ECS:
+    - 'Component': 'api/ecs/component.md'
+    - 'Query': 'api/ecs/query.md'
+    - 'System': 'api/ecs/system.md'
+    - 'World': 'api/ecs/world.md'
   - Extras:
     - 'api/types/manifest.md'
 
@@ -89,9 +95,14 @@ nav:
     - 'Conditions': 'intro/tina/libraries/conditions.md'
     - 'Processes': 'intro/tina/libraries/processes.md'
 
-  - 'Networking': 'intro/tina/libraries/net/net.md'
+  - ECS:
+    - 'Entity Component System': 'intro/tina/ecs/ecs.md'
+    - 'Design Motivation': 'intro/tina/ecs/design.md'
+    - 'The Future': 'intro/tina/ecs/future.md'
+    - 'Snippets': 'intro/tina/ecs/vs-code-snippets.md'
+    - 'Best Practices': 'intro/tina/ecs/best-practices.md'
 
-  - 'Entity Component System': 'intro/tina/ecs.md'
+  - 'Networking': 'intro/tina/libraries/net/net.md'
 
 - Style Guide: 'intro/styleguide.md'
 
