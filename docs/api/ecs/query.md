@@ -6,9 +6,9 @@ icon: material/cube
 
 A query is used to filter entities from the world based on their components.
 
-To create a query, use the [`#!typescript createQuery()`](../api/world.md/#markdown "createQuery()") method, which takes a set of components, and will return a query that matches all the entities in the owning world that have the given components.
+To create a query, use the [`#!typescript createQuery()`](../world/#createQuery "createQuery()") method, which takes a set of components, and will return a query that matches all the entities in the owning world that have the given components.
 
-Queries can be created using the helper functions [`#!typescript all()`](../api/query.md/#markdown "ALL()"), [`#!typescript any()`](../api/query.md/#markdown "ANY()"), and [`#!typescript none()`](../api/query.md/#markdown "NOT()"), which can be used to create complex queries.
+Queries can be created using the helper functions [`#!typescript ALL()`](#all "ALL()"), [`#!typescript ANY()`](#any "ANY()"), and [`#!typescript NOT()`](#not "NOT()"), which can be used to create complex queries.
 
 
 #### Usage
@@ -22,12 +22,18 @@ const query = world.createQuery(Position, ANY(Velocity, NOT(Acceleration)));
 query.forEach(entityId => {
     // ...
 });
+
+// or
+
+for (const entityId of query) {
+    // ...
+}
 ```
 
 !!! note "The order of iteration for a query is not guaranteed."
 
 
-### :material-function-variant: **`#!typescript public match(target: Array<ComponentId>, mask: QueryMask): boolean`** { #markdown data-toc-label='match' }
+### :material-function-variant: **`#!typescript public match(target: Array<ComponentId>, mask: QueryMask): boolean`** { #match data-toc-label='match' }
 
 Traverses the query mask, and returns true if the archetype mask matches the given query.
 
@@ -50,7 +56,7 @@ This function is not typically used directly but is used internally by the world
 
 
 
-### :material-function-variant: **`#!typescript public forEach(callback: (entityId: EntityId) => void): void`** { #markdown data-toc-label='forEach' }
+### :material-function-variant: **`#!typescript public forEach(callback: (entityId: EntityId) => void): void`** { #forEach data-toc-label='forEach' }
 
 Runs a callback for each entity that matches the query.
 
@@ -66,16 +72,16 @@ query.forEach(entityId => {
 #### Parameters
 `#!typescript callback: (entityId: EntityId) => boolean | void`
 
- : The callback run for each entity in the query.
+ : The callback ran for each entity in the query.
 
 
 ## Query Helper Functions
 
 Below are a set of helper functions that can be used to create queries.
 
-These functions are used in conjunction with the [`#!typescript createQuery()`](../api/world.md/#markdown "createQuery()") method, and should not be used directly.
+These functions are used in conjunction with the [`#!typescript createQuery()`](../world/#createQuery "createQuery()") method, and should not be used directly.
 
-### :material-function-variant: **`#!typescript ALL(...components: Array<RawQuery | AnyComponent>): RawQuery`** { #markdown data-toc-label='ALL' }
+### :material-function-variant: **`#!typescript ALL(...components: Array<RawQuery | AnyComponent>): RawQuery`** { #all data-toc-label='ALL' }
 
 Matches to all provided components.
 
@@ -94,7 +100,7 @@ ALL(ComponentA, ANY(ComponentB, ComponentC))
  : Any number of components to match against.
 
 
-### :material-function-variant: **`#!typescript ANY(...components: Array<RawQuery | AnyComponent>): RawQuery`** { #markdown data-toc-label='ANY' }
+### :material-function-variant: **`#!typescript ANY(...components: Array<RawQuery | AnyComponent>): RawQuery`** { #any data-toc-label='ANY' }
 
 Matches to any of the provided components.
 
@@ -113,7 +119,7 @@ ANY(ComponentA, ALL(ComponentB, ComponentC))
  : Any number of components to match against.
 
 
-### :material-function-variant: **`#!typescript NOT(...components: Array<RawQuery | AnyComponent>): RawQuery`** { #markdown data-toc-label='NOT' }
+### :material-function-variant: **`#!typescript NOT(...components: Array<RawQuery | AnyComponent>): RawQuery`** { #not data-toc-label='NOT' }
 
 Matches to entities that do not have any of the provided components.
 
