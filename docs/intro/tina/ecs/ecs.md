@@ -23,7 +23,7 @@ For more in-depth information, check out [this FAQ](https://github.com/SanderMer
 
 ## Getting **Started**
 
-To get started with the ECS, first, you need to create a new world. The world is the main entry point for the ECS, and nearly all functionality will be accessed through it.
+To get started with the ECS, first, you need to create a new `world`. The world is the main entry point for the ECS, and nearly all functionality will be accessed through it.
 
 Typically you will only need one world per game, but there is no restriction on the number of worlds that can be created.
 
@@ -31,7 +31,7 @@ Typically you will only need one world per game, but there is no restriction on 
 
 ```ts
 /* We provide default options to the world, which we will cover later. */
-const world = new World({...});
+const world = Tina.createWorld({...});
 ```
 
 From here, you can schedule systems to run, add entities, and more.
@@ -45,16 +45,20 @@ Each data type that you have is internally represented as an array of values, wh
 <h5 a><strong><code>components/example-component.ts</code></strong></h5>
 
 ```ts
-import { ComponentTypes, createComponent } from "@rbxts/tina";
+import { ComponentTypes, Tina } from "@rbxts/tina";
 
-export const Position = createComponent({
+export const Position = Tina.createComponent({
     value: ComponentTypes.Vector3,
 });
 ```
 
-!!! Tip
+!!! Note
 
     Unlike some other ECS implementations, Tina does not require you to register components with the underlying world. Tina stores component and entity ids as global identifiers therefore there are no collisions between worlds.
+
+!!! Tip
+
+    If you only have one value on a component, it can be tempting to name it the same thing as the component name, e.g. a value `position` on the Position component. We recommend in these cases naming it `value`. This is so that indexing a certain property does not look like `Position.position`, and instead `Position.value`.
 
 Components are stored as singletons, therefore you can import them and use them directly anywhere in your code.
 
@@ -65,14 +69,14 @@ Tags are a special type of component that does not contain any data. Internally 
 <h5 a><strong><code>tags/example-tag.ts</code></strong></h5>
 
 ```ts
-import { createTag } from "@rbxts/tina";
+import { Tina } from "@rbxts/tina";
 
-export const PlayerTag = createTag();
+export const PlayerTag = Tina.createTag();
 ```
 
 ### Entities
 
-An entity is a unique thing in your game. It can be a player, a projectile, a tree, etc. It is a unique identifier that ...
+An entity is a unique thing in your game. It can be a player, a projectile, a tree, etc. It is a unique identifier that allows you to retrieve data on components. 
 
 <h5 a><strong><code>main.server.ts</code></strong></h5>
 
@@ -89,6 +93,12 @@ world.addComponent(entityId, Position, {
     value: new Vector3(100, 5, 100),
 });
 
+/* This is syntactic sugar for the below. */
+world.addComponent(entityId, Position);
+Position.value[entityId] = new Vector3(100, 5, 100);
+
+...
+
 world.addTag(entityId, PlayerTag);
 ```
 
@@ -103,9 +113,13 @@ Systems in Tina are set up using a class.
 ```ts
 import { System } from "@rbxts/tina";
 
-export class ExampleSystem extends System {
+export const ExampleSystem = new (class ExampleSystem extends System {
     constructor() {
-        super();
+        // You can set system options in the super call, or below. We'd
+        // recommend sticking to one or the other.
+        super({
+            executionGroup: RunService.PostSimulation,
+        });
         
         /* The execution group that this system will run on. */
         this.executionGroup = RunService.PostSimulation,
@@ -115,7 +129,7 @@ export class ExampleSystem extends System {
     public onUpdate(world: World) {
         print("Hello, world!");
     }
-}
+})();
 ```
 
 ### Queries
@@ -127,17 +141,19 @@ Queries are used to match entities that have a certain set of components. They a
 ```ts
 import { System } from "@rbxts/tina";
 import { Position, Velocity } from "components";
+import { RunService } from "@rbxts/services";
 
 /* It can be beneficial to store a reference to these values. */
 const position = Position.value;
 const velocity = Velocity.value;
 
-export class ExampleSystem extends System {
+export const ExampleSystem = new(class ExampleSystem extends System {
     private movementQuery!: Query;
 
     constructor() {
-        super();
-        this.executionGroup = RunService.PostSimulation,
+        super({
+            executionGroup = RunService.PreSimulation,
+        });
     }
 
     /**
@@ -156,7 +172,7 @@ export class ExampleSystem extends System {
             position[entityId] = position[entityId].add(velocity[entityId]);
         });
     }
-}
+})();
 ```
 
 ## Putting it all together
