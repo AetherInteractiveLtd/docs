@@ -1,0 +1,2197 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tina/libraries/net/net/">
+      
+      
+        <link rel="next" href="../../blog/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/icon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+    
+    
+      
+        <title>Marp Style Guide - Tina Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.527e139f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#style-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Tina Framework" class="md-header__button md-logo" aria-label="Tina Framework" data-md-component="logo">
+      
+  <img src="../../assets/docs_icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tina Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Marp Style Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AetherInteractiveLtd/Tina" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Aether/Tina
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/api_docs/" class="md-tabs__link">
+          
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../tina/philosophy/" class="md-tabs__link">
+          
+  
+  Tina Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        
+  
+  Style Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../blog/" class="md-tabs__link">
+        
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/archive/2022/" class="md-tabs__link">
+          
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tina Framework" class="md-nav__button md-logo" aria-label="Tina Framework" data-md-component="logo">
+      
+  <img src="../../assets/docs_icon.png" alt="logo">
+
+    </a>
+    Tina Framework
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AetherInteractiveLtd/Tina" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Aether/Tina
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/api_docs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/coverage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    API Detail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/tina/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15l-1.89 1.07L16 8.61l1.96-1.11L12 4.15M6.04 7.5 12 10.85l1.96-1.1-5.88-3.4L6.04 7.5M5 15.91l6 3.38v-6.71L5 9.21v6.7m14 0v-6.7l-6 3.37v6.71l6-3.38Z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Tina
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/condition/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15l-1.89 1.07L16 8.61l1.96-1.11L12 4.15M6.04 7.5 12 10.85l1.96-1.1-5.88-3.4L6.04 7.5M5 15.91l6 3.38v-6.71L5 9.21v6.7m14 0v-6.7l-6 3.37v6.71l6-3.38Z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Condition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/process/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/event_emitter/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    EventEmitter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/event_listener/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    EventListener
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_8" >
+        
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    ECS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ECS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ecs/component/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Component
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ecs/query/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Query
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ecs/system/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ecs/world/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_9" >
+        
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Extras
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Extras
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/types/manifest/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6m0 2h7v5h5v11H6V4m2 8v2h8v-2H8m0 4v2h5v-2H8Z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Tina Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tina Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/philosophy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    The Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/core/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Main Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Lib
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lib
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/libraries/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/libraries/conditions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/libraries/processes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Processes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    ECS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ECS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/ecs/ecs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Entity Component System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/ecs/design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Motivation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/ecs/future/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    The Future
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/ecs/vs-code-snippets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Snippets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/ecs/best-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tina/libraries/net/net/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Style Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2022/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    2022
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+  
+
+
+<!--
+_backgroundColor: #202228
+-->
+
+<p><img alt="w:400" src="../../assets/branding_logo.png" /></p>
+<h1 id="style-guide"><strong>Style Guide</strong></h1>
+<h4 id="stylistic-guidelines-for-writing-code-in-typescript-for-the-tina-framework">Stylistic Guidelines for writing code in TypeScript for the <a href="https://tina.ataether.com/">Tina</a> Framework.</h4>
+<p><span class="small-text"><em>This Style Guide is heavily derived from Google's Styleguide for JavaScript.</em></span></p>
+<hr />
+<h1 id="1-introduction">1 - Introduction</h1>
+<p>1.1 - <a href="#3">File Structure</a>
+1.2 - <a href="#4">Source Files</a>
+1.3 - <a href="#5">Source Folders</a></p>
+<p>Next - <a href="#6">Formatting</a></p>
+<hr />
+<h3 id="1-introduction_1">1 Introduction</h3>
+<h4 id="11-file-structure">1.1 File Structure</h4>
+<p>The file structure of all Tina projects can be found at <a href="../tina/start/">Quick Start</a>.</p>
+<hr />
+<h3 id="1-introduction_2">1 Introduction</h3>
+<h4 id="12-source-files">1.2 Source Files</h4>
+<p>All TypeScript files should end with extension <code>.ts</code>, and should use a <code>PascalCase</code> naming scheme; any files that contain TSX code need to hold extension <code>.tsx</code>.
+<div class="highlight"><pre><span></span><code>index.ts
+Game.ts
+/ui
+   index.ts
+   App.tsx
+   PageRouter.tsx
+</code></pre></div></p>
+<hr />
+<h3 id="1-introduction_3">1 Introduction</h3>
+<h4 id="13-source-folders">1.3 Source Folders</h4>
+<p><span class="small-text" markdown>All folders with Source Code should be labeled in abbreviations or very short names, such as <code>/ui</code> for <em>User Interface</em>.</span></p>
+<p class="small-text">
+If a folder contains <code>.rbxm</code> or <code>.rbxmx</code> files, these should be explained with a `meta.md`.
+</span>
+
+
+<div class="highlight"><pre><span></span><code>index.ts
+/lib
+   /elements
+      meta.md
+   /ui
+      index.ts
+</code></pre></div>
+
+---
+
+# 2 - Formatting
+
+2.1 - Braces
+2.2 - Block Indentation
+2.3 - Statements
+2.4 - Column Limit
+2.5 - Line-Wrapping
+2.6 - Whitespace
+2.7 - Grouping Parentheses
+2.8 - Comments
+2.9 - TSDoc
+
+---
+
+### 2 Formatting
+#### 2.1 Braces
+
+Braces are **required** for all control structures (`if`, `else`, `for`, `do`, `while`).
+
+Braces are always kept on the same line as the control structure initiated, there will be no C++*isms*. The only exception is a *quick-`if`*;
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">shortCondition</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// or</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">shortCondition</span><span class="p">())</span><span class="w"> </span><span class="nx">foo</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+### 2 Formatting
+#### 2.2 Block Indentation
+
+Blocks must always abide by the following core points:
+
+- <span class="small-text">All indentation must be +4 **spaces**.</span>
+- <span class="small-text">No line break before the opening brace.</span>
+- <span class="small-text">Line break after the opening brace.</span>
+- <span class="small-text">Line break before the closing brace.</span>
+
+---
+
+### 2 Formatting
+#### 2.3 Statements
+
+Statements must always abide by the following core points:
+
+#### **One statement per line**
+
+Every statement must be followed by a line-break.
+
+#### **Semicolon after every statement**
+
+Every eol-statement must be directly terminated by a semicolon, missing semicolons will result in docked pay. This does not include control structures, class definitions, arrow functions, etc.
+
+---
+
+### 2 Formatting
+#### 2.4 Column Limit
+
+All lines should end at 100 columns before being wrapped or scrapped.
+
+###### Exceptions
+
+- `import` statements that have less than 4 members being imported.
+- Lines that need to be user-discovered, such as URLs or Commands.
+- Mission-Crucial data such as encryption or API keys.
+
+---
+
+### 2 Formatting
+#### 2.5 Line-Wrapping
+
+<span class="small-text">The prime directive of line-wrapping is: prefer to break at the highest syntactic level;<span/>
+<div class="highlight"><pre><span></span><code><span class="nx">currentTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">currentTotal</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">currentAggregator</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">currentTotal</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.8</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">currentAggregator</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nx">currentTotal</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">    </span><span class="nx">math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="nx">currentTotal</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">(</span><span class="nx">currentAggregator</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">currentTotal</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.2</span><span class="w"></span>
+<span class="w">    </span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.8</span><span class="w"></span>
+<span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="nx">currentAggregator</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+### 2 Formatting
+#### 2.6 Whitespace
+
+###### 2.6.1 Vertical Whitespace
+
+<span class="small-text">A single blank line can — and *should*, appear when any of the following are true:</span>
+
+- Between unrelated method calls.
+- Between unrelated method definitions in a class or object literal.
+- Between unrelated property definitions in a class or object literal.
+
+<span class="small-text">Do **NOT** include a vertical whitespace on creation of a block.</span>
+
+---
+
+###### 2.6.2 Horizontal Alignment
+
+<span class="small-text">Do **NOT** try to align tokens above or below each other in any context.</span>
+
+Example:
+
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">//    ------ added spaces</span><span class="w"></span>
+<span class="w">    </span><span class="nx">small</span><span class="o">:</span><span class="w">       </span><span class="kt">248_000</span><span class="w"></span>
+<span class="w">    </span><span class="nx">veryDamnBig</span><span class="o">:</span><span class="w"> </span><span class="kt">12</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+###### 2.6.3 Horizontal Whitespace
+
+General guidelines for placement of Horizontal Whitespaces;
+- Do **NOT** include trailing whitespaces.
+- Always place a whitespace after a reserved word (`if`, `switch`, ...); This rule is only violated by `function` and `super`
+- Place a whitespace before any open curly brace.
+- Place a whitespace before and after the members of a tuple definition. (e.g: `[ foo, bar ]`)
+- Always place a whitespace after the beginning of a comment.
+- Always place a whitespace after an inline multiline comment has ended. (e.g: `foo(/** @type {number} */ bar)`).
+
+Generally, try not to glue stuff together.
+
+---
+
+### 2 Formatting
+#### 2.7 Grouping Parentheses
+
+<p class="small-text">Grouping is generally recommended where possible and reasonable.
+The reader should not be expected to have the entire operator precedence table memorized.</p>
+
+<span class="small-text">That said, do **NOT** group around operators such as `delete`, `typeof`, `void`, `return`, `throw`, `case`, `in`, `of`, or `yield`.</span>
+
+---
+
+### 2 Formatting
+#### 2.8 Comments
+
+Comments are preferred in their multi-line form (`/* ... */`) whenever they take up a full line or more, and should primarily use a leading `//` when appending information to the end of a line.
+
+`/** ... */` is **reserved** for TSDoc comments.
+
+---
+
+### 2 Formatting
+#### 2.9 TSDoc
+
+TSDoc comments reserve the following comment syntax.
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * description</span>
+<span class="cm"> * @param {string} arg</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">foo</span><span class="p">(</span><span class="nx">arg</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+</code></pre></div>
+
+Do **NOT** leave a title on the leading line (`/** foo`), TSDoc comments do not need to be titled. TSDoc comments are optional.
+
+---
+
+# 3 - Language Features
+
+3.1 - Variables
+3.2 - Array Literals
+3.3 - Object Literals
+3.4 - Enumerators
+3.5 - Classes
+3.6 - Functions
+3.7 - String Literals
+3.8 - Number Literals
+3.9 - Control Structures
+3.10 - `this`
+3.11 - Operators
+
+---
+
+### 3 Language Features
+#### 3.1 Variables
+
+All variables where possible will use `const`, decreasing to `let` if needed. `var` is **banned**.
+
+---
+
+### 3 Language Features
+#### 3.2 Array Literals
+
+Arrays will be defined using `[]` exclusively.
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s1">&#39;foo&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+###### 3.2.1 Trailing Commas
+
+Always use trailing commas when an array is on multiple lines. Single-line arrays are not *required* to have trailing commas.
+
+---
+
+###### 3.2.2 Destructuring
+
+Destructuring of arrays is permitted and syntax should be that of tuples, including when using spreead arguments;
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">vec</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">items</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calculate</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+Unused elements should be omitted so as to not polute the environment,
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">items</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calculate</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+###### 3.2.3 Spread operator
+
+Spread operators should be used without a space following the ellipsis (`...`). Naming of a spread argument should always be plural representing what it possesses.
+
+---
+
+### 3 Language Features
+#### 3.3 Object Literals
+
+###### 3.3.1 Trailing Commas
+
+Always use trailing commas.
+
+---
+
+###### 3.3.2 Key Flavors
+
+Pick a single key flavor and stick with it, do not mix quoted/unquoted/symbollic keys. The following illustrates this;
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">42</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s1">&#39;time_ms&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="nx">_000</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="s2">&quot;time_ns&quot;</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="nx">_000_000</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="c1">// Instead:</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">42</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">time_ms</span><span class="o">:</span><span class="w"> </span><span class="kt">42_000</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">time_ns</span><span class="o">:</span><span class="w"> </span><span class="kt">42_000_000</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+###### 3.3.3 Method Shorthand
+
+It is **forbidden** to use `methodName: () => foo` inside of an object literal, you **must** use `methodName() {}` shorthand instead.
+
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">42</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">foo</span><span class="p">(</span><span class="nx">otherTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="cm">/* ... */</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+### 3 Language Features
+#### 3.4 Enumerators
+
+Enumerators (`enum`) should be used with static constants, all mission-critical enums should have all their mapped values stay static, so there will be no adding to the middle of an enum and suddenly breaking Production data. This also helps with readability.
+
+<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">ViewSetting</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Panoramic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Portrait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Landscape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+### 3 Language Features
+#### 3.5 Classes
+
+Classes should always be defined with the ES6 syntax `class Name {}`. Constructors are optional, and fields should either all be defined in the object body or in the constructor.
+
+---
+
+###### 3.5.1 Field Composition
+
+It is **NOT** allowed to mix Object Body/Constructor Fields if the constructor is collapsed or body-less.
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Example</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">bar</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="k">public</span><span class="w"> </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// This is **NOT** okay.</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="c1">// But,</span><span class="w"></span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Example2</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">bar</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="c1">// This is fine.</span><span class="w"></span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+###### 3.5.2 Class Field Stack
+
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">E</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">thatOneBirthmarkOnMyBottom</span><span class="o">:</span><span class="w"> </span><span class="kt">Memory</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">loveForMyMother</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">nonoSquare</span><span class="o">:</span><span class="w"> </span><span class="kt">Region</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">deepestSecrets</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">socialSecurity</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nx">bankPin</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">birthday</span><span class="o">:</span><span class="w"> </span><span class="kt">Date</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">friends</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/* then static, then methods */</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+### 3 Language Features
+#### 3.6 Functions
+
+###### 3.6.1 Top-Level Functions
+
+All Top-Level functions should be Arrow Functions (`() => {}`), usage of braces is as previously specified.
+
+---
+
+###### 3.6.2 Trailing Commas in Parameters
+
+Trailing Commas should always be used when parameters are expanded. Single-line definitions are allowed optional commas.
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">bees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="nx">str</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="c1">// This comma is required.</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+</code></pre></div>
+
+
+###### 3.6.3 Return Types
+
+Whenever a return type is unclear, it should be specified, this is left to author's discretion but will sometimes be remarked on more complex methods.
+
+---
+
+### 3 Language Features
+#### 3.7 String Literals
+
+All string literals will use single quotes (`'`). If several lines are required, use template literals instead.
+
+###### 3.7.1 Template Literals
+
+All template literals will use the backtick character (``` ` ```)
+
+###### 3.7.2 Line Continuations
+
+Do **NOT** use `\` or terminate string, all line continuations are strictly banned and will sadly just have to be too long.
+
+---
+
+### 3 Language Features
+#### 3.8 Number Literals
+
+Number literals may use `0x`, `0o`, and `0b` where possible as prefixes for hex, octal, and binary respectively. Never use any leading zeroes (except when used to illustrate data registers).
+
+Feel free to use `200_000` syntax with underscores delimiting every 3rd power of 10, though please do not apply this to decimals.
+
+---
+
+### 3 Language Features
+#### 3.9 Control Structures
+
+###### 3.9.1 `for` loops
+
+`for`-`of` loops are always preferred when their use is possible, `@rbxts/object-utils` provides `Object.keys()` to permit their continued efficient usage.
+
+---
+
+###### 3.9.2 `try {} catch {}` statements
+
+Exceptions should only be used when it is possible for the block to throw any errors, and shouldn't be used for fun. Very importantly **always** leave a comment exactly as follows whenever you leave an error unhandled.
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* UNHANDLED ERROR */</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+If an error should not be handled, leave an appropriate comment stating that;
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* Continue; we&#39;re okay if this didn&#39;t work */</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+###### 3.9.3 `switch` statements
+
+###### 3.9.3.1 Fall-through in `switch`
+
+Fall-through is a very useful feature but can often lead to confusion, leave comments whenever there is a fall-through as long as the current case has had any code;
+
+---
+
+Example:
+
+<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">1</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">case</span><span class="w"> </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="c1">// This fall through is okay and does not need to be commented.</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">3</span><span class="o">:</span><span class="w"> </span>
+<span class="w">        </span><span class="kt">code</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="cm">/* fall through */</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// This fall through needed to be commented as code has executed, it needs to be clear we&#39;re continuing downwards.</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">4</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="kt">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nx">default</span><span class="o">:</span><span class="w"></span>
+<span class="w">        </span><span class="kt">handleNothing</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+###### 3.9.3.2 `default` block
+
+The `default` block is **necessary** no matter what, even if it's not feasible for it to be reached, simply because code can change and evolve and we need to be prepared. It is not mandatory to use `break` to terminate it.
+
+---
+
+### 3 Language Features
+#### 3.10 `this`
+
+The `this` keyword should only be used whenever inside of a class, so as to not confuse contexts.
+
+---
+
+### 3 Language Features
+#### 3.11 Operators
+
+###### 3.11.1 Equality Checks
+
+Always use identity operators (`===` / `!==`).
+
+###### 3.11.2 Increment/Decrement Operators
+
+Increment/Decrement *may* be used solely for integers, do not use `++` or `--` on floats or non-linear values. `+=` and `-=` are usually preferred.
+
+---
+
+### 3 Language Features
+#### 3.12 Ternary Statements
+
+Ternary statements should be constructed with `<condition> ? <ifTrue> : <ifFalse>`, wrapping them should always have the `?` and `:` leading their own lines, at one tab deeper than the start line of the condition.
+
+<div class="highlight"><pre><span></span><code><span class="nx">doFoo</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="nx">longConditionalExpression</span><span class="p">.</span><span class="nx">isValid</span><span class="p">()</span><span class="w"> </span>
+<span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;valid&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</code></pre></div>
+
+---
+
+### 3 Language Features
+#### 3.13 Namespaces
+
+Namespaces should never contain nested classes inline, please include them through (ugly but better) syntax:
+
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">FooCake</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="nx">namespace</span><span class="w"> </span><span class="nx">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Cake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">FooCake</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+Any relevant Types should also be exported through Namespaces.
+
+---
+
+<!--
+_footer: "Naming Scheme"
+_class: invert
+-->
+
+Please see [Naming Scheme](../assets/code.png).
+
+---
+
+# 6 - Abstract Patterns
+
+<div style="display: flex;">
+    <ul>
+        6.1 - Structural Patterns
+        <li class="side">6.1.1 - Bridge</li>
+        <li class="side">6.1.2 - Adapter</li>
+        <li class="side">6.1.3 - Composite</li>
+        <li class="side">6.1.4 - Decorator</li>
+        <li class="side">6.1.5 - Facade</li>
+        <li class="side">6.1.6 - Flyweight</li>
+        <li class="side">6.1.7 - Proxy</li>
+    </ul>
+    <ul style="padding-left: 88px">
+        6.2 - Creational Patterns
+        <li class="side">6.2.1 - Factory Method</li>
+        <li class="side">6.2.2 - Abstract Factory</li>
+        <li class="side">6.2.3 - Builder</li>
+        <li class="side">6.2.4 - Prototype</li>
+        <li class="side">6.2.5 - Singleton</li>
+    </ul>
+</div>
+
+---
+
+### 6.1 Abstract Patterns - Structural Patterns
+#### 6.1.1 Bridge
+
+The Bridge Pattern is a pattern that lets you split abstraction and implementation into two separate hierarchies, using it is authorized.
+
+#### 6.1.2 Adapter
+
+Adapters are middle-men between data, using them is perfectly fine, though their use being required should be something looked into. All Adapters should explicitly be named "____Adapter"
+
+---
+
+#### 6.1.3 Composite
+
+Composites allow a branching tree of objects and data, this pattern should be avoided.
+
+#### 6.1.4 Decorator
+
+Decorators are cryptic and side-effect-y, avoid them at all costs.
+
+#### 6.1.5 Facade
+
+Facades present simpler and shorter APIs for complex sets of data or features, using them is fine. All Facades should explicitly be named "____API"
+
+---
+
+#### 6.1.6 Flyweight
+
+Flyweight is the sharing of global state or data, it is heavily encouraged and morphing it to Boids or other grouping techniques is great. Using Flyweight in ECS is complicated but can and should be accomplished.
+
+#### 6.1.7 Proxy
+
+Proxies handle caches or access to complex and heavy APIs. Restrict Proxy usage to actually complex objects, name them discretely so as to not impersonate the eventual object.
+
+---
+
+### 6.2 Abstract Patterns - Creational Patterns
+#### 6.2.1 Factory Method
+
+Factory Methods are fine but due to our hopeful lack of Singletons, usage of them should be limited.
+
+#### 6.2.2 Abstract Factory
+
+Abstract Factories have quite ugly application and semblance, so let's keep it to data-instantiators for the ECS.
+
+---
+
+#### 6.2.3 Builder
+
+Builders are absolutely genuinely just banned, if you use a Builder in production code I will instantly ban you from existence. (I WILL KILL YOU)
+
+(I'M NOT JOKING, DO NOT TEST ME)
+
+#### 6.2.4 Prototype
+
+Prototypes are used for cloning objects without needing their class metadata, avoid their use.
+
+---
+
+#### 6.2.5 Singleton
+
+Using Singletons allows you to have a single overarching service, or some sort of public global access point to data, do not use Singletons.
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs Insiders
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      
+    
+  </body>
+</html>

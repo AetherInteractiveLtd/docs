@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../events/">
+        <link rel="prev" href="../../libraries/processes/">
       
       
-        <link rel="next" href="../processes/">
+        <link rel="next" href="../design/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Conditions - Tina Framework</title>
+        <title>Entity Component System - Tina Framework</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#conditions" class="md-skip">
+        <a href="#using-the-ecs" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Conditions
+              Entity Component System
             
           </span>
         </div>
@@ -992,8 +992,6 @@
                 
   
   
-    
-  
   
     
     
@@ -1008,13 +1006,15 @@
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
         
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
             
@@ -1033,7 +1033,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1050,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../events/" class="md-nav__link">
+      <a href="../../libraries/events/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1074,35 +1074,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    
-  
-    Conditions
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../libraries/conditions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1117,70 +1091,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creating-conditions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creating conditions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluating-conditions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evaluating conditions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conditions-events" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conditions &amp; Events
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#methods-available" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Methods available
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1192,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../processes/" class="md-nav__link">
+      <a href="../../libraries/processes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1224,6 +1134,8 @@
                 
   
   
+    
+  
   
     
     
@@ -1242,15 +1154,13 @@
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
         
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
@@ -1269,7 +1179,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1284,9 +1194,35 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ecs/ecs/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    
+  
+    Entity Component System
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1301,6 +1237,120 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-ecs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an ECS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting it all together
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1312,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ecs/design/" class="md-nav__link">
+      <a href="../design/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1338,7 +1388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ecs/future/" class="md-nav__link">
+      <a href="../future/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1364,7 +1414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ecs/vs-code-snippets/" class="md-nav__link">
+      <a href="../vs-code-snippets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1390,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ecs/best-practices/" class="md-nav__link">
+      <a href="../best-practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1424,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../net/net/" class="md-nav__link">
+      <a href="../../libraries/net/net/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1606,112 +1656,164 @@
   
 
 
-<h1 id="conditions">Conditions</h1>
-<p>Conditions are the way to perform and evaluate boolean operations whether they are wrapped around a <code>.condition()</code> or in an if-statement.</p>
-<h3 id="creating-conditions">Creating conditions</h3>
-<p>Conditions can be created as in <code>COND.create(f: (...args) =&gt; boolean)</code>. The function can take optional arguments when being evaluated.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">))</span><span class="w"></span>
+<h1 id="using-the-ecs">Using the ECS</h1>
+<p>The ECS (Entity Component System) is a core feature of Tina.</p>
+<h2 id="what-is-an-ecs">What is an ECS?</h2>
+<blockquote>
+<p>ECS ("Entity Component System") describes a design approach which
+promotes code reusability by separating data from behavior. Data is
+often stored in cache-friendly ways which benefit performance. An ECS
+has the following characteristics:</p>
+<ul>
+<li>It has entities, which are unique identifiers</li>
+<li>It has components, which are plain datatypes without behavior</li>
+<li>Entities can contain zero or more components</li>
+<li>Entities can change components dynamically</li>
+<li>It has systems, which are functions matched with entities that have a certain set of components.  </li>
+</ul>
+<p>The ECS design pattern is often enabled by a framework. The term
+"Entity Component System" is often used to indicate a specific
+implementation of the design pattern.</p>
+</blockquote>
+<p>For more in-depth information, check out <a href="https://github.com/SanderMertens/ecs-faq">this FAQ</a> from the creator of <a href="https://github.com/SanderMertens/flecs">Flecs</a>.</p>
+<h2 id="getting-started">Getting <strong>Started</strong></h2>
+<p>To get started with the ECS, first, you need to create a new <code>world</code>. The world is the main entry point for the ECS, and nearly all functionality will be accessed through it.</p>
+<p>Typically you will only need one world per game, but there is no restriction on the number of worlds that can be created.</p>
+<h5 a><strong><code>main.server.ts</code></strong></h5>
+
+<div class="highlight"><pre><span></span><code><span class="cm">/* We provide default options to the world, which we will cover later. */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">createWorld</span><span class="p">({...});</span><span class="w"></span>
 </code></pre></div>
-<h3 id="evaluating-conditions">Evaluating conditions</h3>
-<p>Conditions by themselves aren't a big thing, they need some way to be evaluated. To evaluate conditions we use <code>.eval(condition: (boolean | (...args) =&gt; boolean))</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
-<span class="cm"> * These are all valid ways to evaluate boolean operations.</span>
-<span class="cm"> */</span><span class="w"></span>
+<p>From here, you can schedule systems to run, add entities, and more.</p>
+<h3 id="components">Components</h3>
+<p>Components are a container that maps an entity's id to its data. They are plain data types, and typically do not contain any behavior.</p>
+<p>Each data type that you have is internally represented as an array of values, where the index of the value corresponds to an entity to which it belongs. E.g. index 1 of the Position component array would be the position of entity 1 (assuming that entity 1 has a position component).</p>
+<h5 a><strong><code>components/example-component.ts</code></strong></h5>
 
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">AND</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ComponentTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span><span class="w"></span>
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)),</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">);</span><span class="w"></span>
-
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">((</span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
-
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">GameState</span><span class="p">.</span><span class="nx">isOn</span><span class="p">(...));</span><span class="w"></span>
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">CharacterController</span><span class="p">.</span><span class="nx">isReplicable</span><span class="p">(),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CharacterDescription</span><span class="p">(...));</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">createComponent</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">ComponentTypes.Vector3</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </code></pre></div>
-<h3 id="conditions-events">Conditions &amp; Events</h3>
-<p>Conditions true power starts to reveal for themselves when we use Events and their <code>.condition()</code> method, it's easier to wrap it around this statement to ensure that next-in-queue callback runs. This lets us have conditioning done in one place without polluting core functionality with unnecessary if-statements.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">RoundEvents</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">startRound</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">timer</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike some other ECS implementations, Tina does not require you to register components with the underlying world. Tina stores component and entity ids as global identifiers therefore there are no collisions between worlds.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you only have one value on a component, it can be tempting to name it the same thing as the component name, e.g. a value <code>position</code> on the Position component. We recommend in these cases naming it <code>value</code>. This is so that indexing a certain property does not look like <code>Position.position</code>, and instead <code>Position.value</code>.</p>
+</div>
+<p>Components are stored as singletons, therefore you can import them and use them directly anywhere in your code.</p>
+<h3 id="tags">Tags</h3>
+<p>Tags are a special type of component that does not contain any data. Internally they are treated as a component but do not have the overhead of storing data. These should be used over components when all you wish to do is mark an entity as having a certain property. E.g. if you want to mark an entity as being a player, you can use a tag instead of a component.</p>
+<h5 a><strong><code>tags/example-tag.ts</code></strong></h5>
 
-<span class="kd">class</span><span class="w"> </span><span class="nx">RoundService</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">RoundEvents</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">180</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">PlayerTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">createTag</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<h3 id="entities">Entities</h3>
+<p>An entity is a unique thing in your game. It can be a player, a projectile, a tree, etc. It is a unique identifier that allows you to retrieve data on components. </p>
+<h5 a><strong><code>main.server.ts</code></strong></h5>
+
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">entityId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">add</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<p>We can then add components to this entity.</p>
+<h5 a><strong><code>main.server.ts</code></strong></h5>
+
+<div class="highlight"><pre><span></span><code><span class="nx">world</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">),</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="cm">/* This is syntactic sugar for the below. */</span><span class="w"></span>
+<span class="nx">world</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Position</span><span class="p">);</span><span class="w"></span>
+<span class="nx">Position</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="nx">entityId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span><span class="w"></span>
+
+<span class="p">...</span><span class="w"></span>
+
+<span class="nx">world</span><span class="p">.</span><span class="nx">addTag</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">PlayerTag</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="systems">Systems</h3>
+<p>Systems are the main way to schedule your code with the ECS. They are functions that run on a given execution group (e.g. <code>PostSimulation</code>) and allow you to easily manage the execution of your code.</p>
+<p>Systems in Tina are set up using a class.</p>
+<h5 a><strong><code>systems/example-system.ts</code></strong></h5>
+
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="p">(</span><span class="kd">class</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// You can set system options in the super call, or below. We&#39;d</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// recommend sticking to one or the other.</span><span class="w"></span>
+<span class="w">        </span><span class="k">super</span><span class="p">({</span><span class="w"></span>
+<span class="w">            </span><span class="nx">executionGroup</span><span class="o">:</span><span class="w"> </span><span class="kt">RunService.PostSimulation</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
+
+<span class="w">        </span><span class="cm">/* The execution group that this system will run on. */</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">executionGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">RunService</span><span class="p">.</span><span class="nx">PostSimulation</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/** onUpdate will be called every time the execution group fires. */</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">})();</span><span class="w"></span>
+</code></pre></div>
+<h3 id="queries">Queries</h3>
+<p>Queries are used to match entities that have a certain set of components. They are typically used within systems to allow us to easily batch iterate over entities that match a certain set of components.</p>
+<h5 a><strong><code>systems/example-system.ts</code></strong></h5>
+
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;components&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RunService</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/services&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="cm">/* It can be beneficial to store a reference to these values. */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Position</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="p">(</span><span class="kd">class</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">movementQuery</span><span class="o">!:</span><span class="w"> </span><span class="nx">Query</span><span class="p">;</span><span class="w"></span>
 
 <span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">super</span><span class="p">();</span><span class="w"></span>
-
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;startRound&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="w"></span>
-<span class="w">                </span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">currentTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="nx">currentTime</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">duration</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="p">})</span><span class="w"></span>
-<span class="w">            </span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="c1">// If this code is executed, that means that the last condition check has passed,</span><span class="w"></span>
-<span class="w">                </span><span class="c1">// that way, this code ensures that the timer is correct.</span><span class="w"></span>
-
-<span class="w">                </span><span class="p">...;</span><span class="w"> </span><span class="c1">// Finish round, initialize next</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<p>Though this can be used with outer state or boolean checkers made by the user.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GameState</span><span class="p">,</span><span class="w"> </span><span class="nx">EGameState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../state&quot;</span><span class="p">;</span><span class="w"></span>
-
-<span class="kd">interface</span><span class="w"> </span><span class="nx">Events</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="nx">approve</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kd">class</span><span class="w"> </span><span class="nx">Meal</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">Events</span><span class="o">&gt;</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">MealDeclaration</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span>
-
-<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">super</span><span class="p">()</span><span class="w"></span>
-
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;approve&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">GameState</span><span class="p">.</span><span class="nx">isOn</span><span class="p">(</span><span class="nx">EGameState</span><span class="p">.</span><span class="nx">ROUND_ON_GOING</span><span class="p">))</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="p">...;</span><span class="w"> </span><span class="c1">// Approve it if the round is still going</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
+<span class="w">        </span><span class="k">super</span><span class="p">({</span><span class="w"></span>
+<span class="w">            </span><span class="nx">executionGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">RunService</span><span class="p">.</span><span class="nx">PreSimulation</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">prepare</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * Configure queries is automatically called when the system is scheduled.</span>
+<span class="cm">     * We can use this to setup any queries that we need.</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">configureQueries</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">movementQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">createQuery</span><span class="p">(</span><span class="nx">ALL</span><span class="p">(</span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="cm">/** onUpdate will be called every time the execution group fires. */</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">movementQuery</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">entityId</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Every time we enter this system, we will get every entityId that</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// has both a Position and Velocity component.</span><span class="w"></span>
+<span class="w">            </span><span class="nx">position</span><span class="p">[</span><span class="nx">entityId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">position</span><span class="p">[</span><span class="nx">entityId</span><span class="p">].</span><span class="nx">add</span><span class="p">(</span><span class="nx">velocity</span><span class="p">[</span><span class="nx">entityId</span><span class="p">]);</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">})();</span><span class="w"></span>
 </code></pre></div>
-<h3 id="methods-available">Methods available</h3>
-<p>Conditions are not only helpful in evaluating boolean operations, but it provides you an API for those common boolean operations that you may find yourself doing over and over again, such as <code>AND</code>, <code>OR</code>, and <code>NOT</code>, but others like <code>NAND</code>, <code>NOR</code>, <code>XNOR</code> are included as well.</p>
-<h4 id="create">create</h4>
-<p>Takes a function that returns a boolean.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<h4 id="eval">eval</h4>
-<p>Evaluates a condition. Data can be passed optionally if it's a function.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">((</span><span class="nx">s</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;condition_met&quot;</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;condition_met&quot;</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
-<h4 id="and">AND</h4>
-<p>AND logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">AND</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
-</code></pre></div>
-<h4 id="or">OR</h4>
-<p>OR logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">OR</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
-</code></pre></div>
-<h4 id="not">NOT</h4>
-<p>NOT logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">NOT</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
-</code></pre></div>
-<h4 id="nor">NOR</h4>
-<p>NOR logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">NOR</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
-</code></pre></div>
-<h4 id="nand">NAND</h4>
-<p>NAND logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">NAND</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
-</code></pre></div>
-<h4 id="xnor">XNOR</h4>
-<p>XNOR logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">XNOR</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
+<h2 id="putting-it-all-together">Putting it all together</h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">World</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./systems/example-system&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">World</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">defaultExecutionGroup</span><span class="o">:</span><span class="w"> </span><span class="kt">RunService.PostSimulation</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MyWorld&quot;</span><span class="p">,</span><span class="w">    </span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="nx">world</span><span class="p">.</span><span class="nx">scheduleSystem</span><span class="p">(</span><span class="nx">ExampleSystem</span><span class="p">);</span><span class="w"></span>
+<span class="nx">world</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span><span class="w"></span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">add</span><span class="p">();</span><span class="w"></span>
+<span class="nx">world</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
 </code></pre></div>
 
 
