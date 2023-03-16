@@ -19,13 +19,13 @@ import { Position, Velocity, Acceleration } from './components';
 
 const world = new World({...});
 const query = world.createQuery(Position, ANY(Velocity, NOT(Acceleration)));
-query.forEach(entityId => {
+query.items().forEach((entityId) => {
     // ...
-});
+})
 
 // or
 
-for (const entityId of query) {
+for (const entityId of query.iter()) {
     // ...
 }
 ```
@@ -56,7 +56,7 @@ This function is not typically used directly but is used internally by the world
 
 
 
-### :material-function-variant: **`#!typescript public forEach(callback: (entityId: EntityId) => void): void`** { #forEach data-toc-label='forEach' }
+### :material-function-variant: **`#!typescript public items(): void`** { #forEach data-toc-label='items' }
 
 Runs a callback for each entity that matches the query.
 
@@ -64,22 +64,39 @@ If the callback returns `false`, the iteration will stop, and no other entities 
 
 #### Usage:
 ```typescript
-query.forEach(entityId => {
-    // ...
-});
+let items: query.items()
 ```
 
-#### Parameters
-`#!typescript callback: (entityId: EntityId) => boolean | void`
+#### Returns
 
- : The callback ran for each entity in the query.
+`#!typescript Array<EntityId>`
+
+ : An array of all the entity IDs for matching entities of this query.
+
+### :material-function-variant: **`#!typescript public *iter(): Generator<EntityId>`** { #markdown data-toc-label='*iter' }
+
+#### Usage:
+```typescript
+for (const entityId of query.iter()) {
+    // ...
+}
+```
+
+#### Returns
+
+`#!typescript Generator<EntityId>`
+
+ : A Generator of all the entity IDs for matching entities of this query.
+
+---
+
 
 
 ## Query Helper Functions
 
 Below are a set of helper functions that can be used to create queries.
 
-These functions are used in conjunction with the [`#!typescript createQuery()`](../world/#createQuery "createQuery()") method, and should not be used directly.
+These functions are used in conjunction with the [`#!typescript world.createQuery()`](../world/#createQuery "createQuery()") method, and should not be used directly.
 
 ### :material-function-variant: **`#!typescript ALL(...components: Array<RawQuery | AnyComponent>): RawQuery`** { #all data-toc-label='ALL' }
 
