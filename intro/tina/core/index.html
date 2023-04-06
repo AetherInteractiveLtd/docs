@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1584,9 +1584,10 @@
   
 
 
+
 <p class="annotate">Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.</p>
 <ol>
-<li><img alt="🙋‍♂️" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> I'm an annotation! I can contain <code>code</code>, <strong>formatted
+<li><img alt="🙋‍♂️" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f64b-200d-2642-fe0f.svg" title=":man_raising_hand:" /> I'm an annotation! I can contain <code>code</code>, <strong>formatted
     text</strong>, images, ... basically anything that can be expressed in Markdown.</li>
 </ol>
 <h1 id="main-usage">Main Usage</h1>
@@ -1602,17 +1603,17 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@rbxts/tina&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@rbxts/tina&#39;</span><span class="p">;</span>
 
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/game&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initialize Game.</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/net&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initalize Networking.</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/ecs&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initalize Entity Component System.</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/game&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initialize Game.</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/net&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initalize Networking.</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/ecs&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initalize Entity Component System.</span>
 
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;shared/lib/game/user&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;shared/lib/game/user&#39;</span><span class="p">;</span>
 
-<span class="cm">/* Starts the Game Processes */</span><span class="w"></span>
-<span class="nx">Tina</span><span class="p">.</span><span class="nx">setUserClass</span><span class="p">(</span><span class="nx">User</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sets the custom user class.</span><span class="w"></span>
-<span class="nx">Tina</span><span class="p">.</span><span class="nx">startGame</span><span class="p">(</span><span class="s2">&quot;GuessTheNumber&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// (1)!</span><span class="w"></span>
+<span class="cm">/* Starts the Game Processes */</span>
+<span class="nx">Tina</span><span class="p">.</span><span class="nx">setUserClass</span><span class="p">(</span><span class="nx">User</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sets the custom user class.</span>
+<span class="nx">Tina</span><span class="p">.</span><span class="nx">startGame</span><span class="p">(</span><span class="s2">&quot;GuessTheNumber&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// (1)!</span>
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>This initializes the game and starts all processes. <a href="/docs/api/Tina/#startGame">Tina.startGame</a></li>
@@ -1626,15 +1627,15 @@
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@rbxts/tina&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@rbxts/tina&#39;</span><span class="p">;</span>
 
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/game&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initialize Game.</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/net&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initialize Networking.</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/ecs&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initialize Entity Component System.</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/game&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initialize Game.</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/net&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initialize Networking.</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;lib/ecs&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Initialize Entity Component System.</span>
 
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;shared/lib/game/user&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;shared/lib/game/user&#39;</span><span class="p">;</span>
 
-<span class="c1">// TODO: Decide what client-side initialization needs to look like.</span><span class="w"></span>
+<span class="c1">// TODO: Decide what client-side initialization needs to look like.</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="events">Events</h2>
 <div class="highlight"><pre><span></span><code>
@@ -1688,7 +1689,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

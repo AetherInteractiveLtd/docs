@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1277,6 +1277,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#components" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1299,10 +1310,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#entities" class="md-nav__link">
+  <a href="#flyweight-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Entities
+        Flyweight Components
       
     </span>
   </a>
@@ -1656,8 +1667,9 @@
   
 
 
+
 <h1 id="using-the-ecs">Using the ECS</h1>
-<p>The ECS (Entity Component System) is a core feature of Tina.</p>
+<p>The ECS (Entity Component System) is a core feature of Tina, that allows a user to represent "things in the world", in a data-driven approach. Rather than representing objects through the typical use of practices such as OOP and inheritance, we take a pure composition approach that gives us the ability to build abstract instances through the sum of their components alone.</p>
 <h2 id="what-is-an-ecs">What is an ECS?</h2>
 <blockquote>
 <p>ECS ("Entity Component System") describes a design approach which
@@ -1676,144 +1688,174 @@ has the following characteristics:</p>
 implementation of the design pattern.</p>
 </blockquote>
 <p>For more in-depth information, check out <a href="https://github.com/SanderMertens/ecs-faq">this FAQ</a> from the creator of <a href="https://github.com/SanderMertens/flecs">Flecs</a>.</p>
-<h2 id="getting-started">Getting <strong>Started</strong></h2>
-<p>To get started with the ECS, first, you need to create a new <code>world</code>. The world is the main entry point for the ECS, and nearly all functionality will be accessed through it.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>To get started with the ECS, first, you need to create a new <code>world</code>. The world is the main entry point for the ECS, and nearly all functionality will be accessed through it. The world is considered a container for your data. </p>
 <p>Typically you will only need one world per game, but there is no restriction on the number of worlds that can be created.</p>
 <h5 a><strong><code>main.server.ts</code></strong></h5>
 
-<div class="highlight"><pre><span></span><code><span class="cm">/* We provide default options to the world, which we will cover later. */</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">createWorld</span><span class="p">({...});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="cm">/* We provide default options to the world, which we will cover later. */</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">createWorld</span><span class="p">({...});</span>
 </code></pre></div>
 <p>From here, you can schedule systems to run, add entities, and more.</p>
+<h3 id="entities">Entities</h3>
+<p>An entity is a unique thing in your game. It could represent a player, a projectile, a tree, etc.</p>
+<p>To create our first entity, we can use the following method:</p>
+<h5 a><strong><code>main.server.ts</code></strong></h5>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">entityId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">add</span><span class="p">();</span>
+</code></pre></div>
+<p>We now have our entity id. But what is an entity id, and how does it allow us to represent our player? The neat part is that an entity is just a number! A plain old number (1, 2, 3...?)! This number is always unique for every entity in your game. This is where the <strong>component</strong> part of an ECS comes in!</p>
 <h3 id="components">Components</h3>
-<p>Components are a container that maps an entity's id to its data. They are plain data types, and typically do not contain any behavior.</p>
-<p>Each data type that you have is internally represented as an array of values, where the index of the value corresponds to an entity to which it belongs. E.g. index 1 of the Position component array would be the position of entity 1 (assuming that entity 1 has a position component).</p>
+<p class="annotate">Components are singleton containers for data. They are plain data types, and typically should not contain any behavior(1).</p>
+<ol>
+<li>Sometimes it can be useful to have functions such as getters and setters within components, but since we shouldn't be using these in Roblox-TS anyway, this point is kind of moot.</li>
+</ol>
+<p>Each field that a component has is internally represented as an array of values, where the index of the array corresponds to the entity to which it belongs. E.g. index 1 of the Position component array would be the position of entity 1 (assuming that entity 1 has a position component).</p>
 <h5 a><strong><code>components/example-component.ts</code></strong></h5>
 
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ComponentTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ComponentTypes</span><span class="p">,</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">createComponent</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">ComponentTypes.Vector3</span><span class="p">,</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">createComponent</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">ComponentTypes.Vector3</span><span class="p">,</span>
+<span class="p">});</span>
 </code></pre></div>
+<p>We can then <code>add</code> this component to our entity.</p>
+<h5 a><strong><code>main.server.ts</code></strong></h5>
+
+<p class="annotate"><div class="highlight"><pre><span></span><code><span class="nx">world</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">),</span>
+<span class="p">});</span>
+
+<span class="cm">/* This is syntactic sugar for the below. */</span>
+<span class="nx">world</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Position</span><span class="p">);</span><span class="w"> </span><span class="cm">/* (1)! */</span>
+<span class="nx">Position</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="nx">entityId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+</code></pre></div></p>
+<ol>
+<li>If an entity already has the given component, the component will not be added to the entity again, and the data will not be updated. If you need to ensure that the component data changes, check first if the entity has the component. </li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Unlike some other ECS implementations, Tina does not require you to register components with the underlying world. Tina stores component and entity ids as global identifiers therefore there are no collisions between worlds.</p>
+<p>Unlike some other ECS implementations, Tina does not require you to register components with the underlying world. Tina stores component and entity ids as global identifiers, (e.g. entity 1 will only ever exist in one world at a time) therefore there are no collisions between worlds. </p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you only have one value on a component, it can be tempting to name it the same thing as the component name, e.g. a value <code>position</code> on the Position component. We recommend in these cases naming it <code>value</code>. This is so that indexing a certain property does not look like <code>Position.position</code>, and instead <code>Position.value</code>.</p>
 </div>
-<p>Components are stored as singletons, therefore you can import them and use them directly anywhere in your code.</p>
 <h3 id="tags">Tags</h3>
-<p>Tags are a special type of component that does not contain any data. Internally they are treated as a component but do not have the overhead of storing data. These should be used over components when all you wish to do is mark an entity as having a certain property. E.g. if you want to mark an entity as being a player, you can use a tag instead of a component.</p>
+<p>Tags are a special type of component that do not contain any data. Internally they are treated as a component but do not have the overhead of data storage. These should be used over components when all you wish to do is mark an entity as having a certain property. E.g. if you want to mark an entity as being an "enemy", you could use a tag instead of a component.</p>
 <h5 a><strong><code>tags/example-tag.ts</code></strong></h5>
 
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">PlayerTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">createTag</span><span class="p">();</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">EnemyTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">createTag</span><span class="p">();</span>
+
+<span class="nx">world</span><span class="p">.</span><span class="nx">addTag</span><span class="p">(</span><span class="nx">enemyEntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">EnemyTag</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="entities">Entities</h3>
-<p>An entity is a unique thing in your game. It can be a player, a projectile, a tree, etc. It is a unique identifier that allows you to retrieve data on components. </p>
-<h5 a><strong><code>main.server.ts</code></strong></h5>
+<h3 id="flyweight-components">Flyweight Components</h3>
+<p>A flyweight is a design pattern that is useful for minimizing memory usage when similar objects should share the same data.</p>
+<p>Flyweight components are an abstraction over this idea. Rather than the component object holding an array of values for each entity, the flyweight component has only a singular storage object.</p>
+<p>This component can then be added to any entity, and easily use the data where required.</p>
+<h5 a><strong><code>tags/example-flyweight.ts</code></strong></h5>
 
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">entityId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">add</span><span class="p">();</span><span class="w"></span>
-</code></pre></div>
-<p>We can then add components to this entity.</p>
-<h5 a><strong><code>main.server.ts</code></strong></h5>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Tina</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span>
 
-<div class="highlight"><pre><span></span><code><span class="nx">world</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">),</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Zombie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">createFlyweight</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">Texture</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rbxassetid://11688231106&quot;</span>
+<span class="w">    </span><span class="nx">Sound</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rbxassertid://1838569831&quot;</span>
+<span class="p">})</span>
 
-<span class="cm">/* This is syntactic sugar for the below. */</span><span class="w"></span>
-<span class="nx">world</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Position</span><span class="p">);</span><span class="w"></span>
-<span class="nx">Position</span><span class="p">.</span><span class="nx">value</span><span class="p">[</span><span class="nx">entityId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span><span class="w"></span>
-
-<span class="p">...</span><span class="w"></span>
-
-<span class="nx">world</span><span class="p">.</span><span class="nx">addTag</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">PlayerTag</span><span class="p">);</span><span class="w"></span>
+<span class="nx">world</span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Zombie</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="systems">Systems</h3>
 <p>Systems are the main way to schedule your code with the ECS. They are functions that run on a given execution group (e.g. <code>PostSimulation</code>) and allow you to easily manage the execution of your code.</p>
 <p>Systems in Tina are set up using a class.</p>
 <h5 a><strong><code>systems/example-system.ts</code></strong></h5>
 
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="p">(</span><span class="kd">class</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// You can set system options in the super call, or below. We&#39;d</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// recommend sticking to one or the other.</span><span class="w"></span>
-<span class="w">        </span><span class="k">super</span><span class="p">({</span><span class="w"></span>
-<span class="w">            </span><span class="nx">executionGroup</span><span class="o">:</span><span class="w"> </span><span class="kt">RunService.PostSimulation</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// You can set system options in the super call, or below. We&#39;d</span>
+<span class="w">        </span><span class="c1">// recommend sticking to one or the other.</span>
+<span class="w">        </span><span class="k">super</span><span class="p">({</span>
+<span class="w">            </span><span class="nx">executionGroup</span><span class="o">:</span><span class="w"> </span><span class="kt">RunService.PostSimulation</span><span class="p">,</span>
+<span class="w">        </span><span class="p">});</span>
 
-<span class="w">        </span><span class="cm">/* The execution group that this system will run on. */</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">executionGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">RunService</span><span class="p">.</span><span class="nx">PostSimulation</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="cm">/* The execution group that this system will run on. */</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">executionGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">RunService</span><span class="p">.</span><span class="nx">PostSimulation</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="cm">/** onUpdate will be called every time the execution group fires. */</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">})();</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/** onUpdate will be called every time the execution group fires. */</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div>
+<p>Systems have a few lifecycle methods that you can opt into.</p>
+<h4 id="prepare">Prepare</h4>
+<p>This is the only asynchronous lifecycle method allowed in a system. It is called when the world is first created and allows you to perform any setup logic. The world is not accessible at this point, so you should not attempt to use it. The system will not be scheduled until this method resolves.</p>
+<h4 id="initialize">Initialize</h4>
+<p>This is called when the system is first scheduled. This is useful for setting up any data that you need to use in the system, such as creating entities that you will use later on.</p>
+<h4 id="configure-queries">Configure Queries</h4>
+<p>This is called when the system is first scheduled. This is useful for setting up any queries that you need to use in the system (see <a href="#queries">Queries</a>).</p>
+<h4 id="onupdate">OnUpdate</h4>
+<p>This is called every time the execution group fires. This is where you should perform any logic that you want to run regularly, and is where the majority of your gameplay logic should be.</p>
+<h4 id="cleanup">Cleanup</h4>
+<p>This is called when the system is unscheduled. This is useful for cleaning up any data that you created in the system. Typically most systems will never be unscheduled and run for the lifetime of the world, so this function will not typically be used.</p>
 <h3 id="queries">Queries</h3>
 <p>Queries are used to match entities that have a certain set of components. They are typically used within systems to allow us to easily batch iterate over entities that match a certain set of components.</p>
 <h5 a><strong><code>systems/example-system.ts</code></strong></h5>
 
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;components&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RunService</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/services&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;components&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RunService</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/services&quot;</span><span class="p">;</span>
 
-<span class="cm">/* It can be beneficial to store a reference to these values. */</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Position</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
+<span class="cm">/* It can be beneficial to store a reference to these values. */</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Position</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="p">(</span><span class="kd">class</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">movementQuery</span><span class="o">!:</span><span class="w"> </span><span class="nx">Query</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">QuerySystem</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">movementQuery</span><span class="o">!:</span><span class="w"> </span><span class="nx">Query</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">super</span><span class="p">({</span><span class="w"></span>
-<span class="w">            </span><span class="nx">executionGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">RunService</span><span class="p">.</span><span class="nx">PreSimulation</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Configure queries is automatically called when the system is scheduled.</span>
-<span class="cm">     * We can use this to setup any queries that we need.</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">configureQueries</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">movementQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">createQuery</span><span class="p">(</span><span class="nx">ALL</span><span class="p">(</span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="cm">     * We can use this to create any queries that we need.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">configureQueries</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">movementQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">createQuery</span><span class="p">(</span><span class="nx">ALL</span><span class="p">(</span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="cm">/** onUpdate will be called every time the execution group fires. */</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">movementQuery</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">entityId</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// Every time we enter this system, we will get every entityId that</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// has both a Position and Velocity component.</span><span class="w"></span>
-<span class="w">            </span><span class="nx">position</span><span class="p">[</span><span class="nx">entityId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">position</span><span class="p">[</span><span class="nx">entityId</span><span class="p">].</span><span class="nx">add</span><span class="p">(</span><span class="nx">velocity</span><span class="p">[</span><span class="nx">entityId</span><span class="p">]);</span><span class="w"></span>
-<span class="w">        </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">})();</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/** onUpdate will be called every time the execution group fires. */</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">entityId</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">movementQuery</span><span class="p">.</span><span class="nx">iter</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Every time we enter this system, we will get every entityId that</span>
+<span class="w">            </span><span class="c1">// has both a Position and Velocity component.</span>
+<span class="w">            </span><span class="nx">position</span><span class="p">[</span><span class="nx">entityId</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">position</span><span class="p">[</span><span class="nx">entityId</span><span class="p">].</span><span class="nx">add</span><span class="p">(</span><span class="nx">velocity</span><span class="p">[</span><span class="nx">entityId</span><span class="p">]);</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div>
 <h2 id="putting-it-all-together">Putting it all together</h2>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">World</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./systems/example-system&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">RunService</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/services&quot;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">World</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">defaultExecutionGroup</span><span class="o">:</span><span class="w"> </span><span class="kt">RunService.PostSimulation</span><span class="p">,</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">World</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./systems/example-system&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">World</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">defaultExecutionGroup</span><span class="o">:</span><span class="w"> </span><span class="kt">RunService.PostSimulation</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MyWorld&quot;</span><span class="p">,</span><span class="w">    </span>
-<span class="p">});</span><span class="w"></span>
+<span class="p">});</span>
 
-<span class="nx">world</span><span class="p">.</span><span class="nx">scheduleSystem</span><span class="p">(</span><span class="nx">ExampleSystem</span><span class="p">);</span><span class="w"></span>
-<span class="nx">world</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span><span class="w"></span>
+<span class="nx">world</span><span class="p">.</span><span class="nx">scheduleSystem</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">ExampleSystem</span><span class="p">());</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">add</span><span class="p">();</span><span class="w"></span>
-<span class="nx">world</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">add</span><span class="p">();</span>
+<span class="nx">world</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">addComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">Vector3</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span><span class="w"> </span><span class="p">});</span>
 </code></pre></div>
 
 
@@ -1864,7 +1906,7 @@ implementation of the design pattern.</p>
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1584,85 +1584,86 @@
   
 
 
+
 <h1 id="networking">Networking</h1>
 <p>Tina provides a networking interface so you don't need to get it from somewhere else, the interface it's pretty intuitive and it's considered to be something similar to what HTTP Requests look like with methods such as <code>GET</code>, <code>POST</code>, and <code>UPDATE</code>. </p>
 <p>Your Endpoints (that's what they're called like) should be defined once and in a single file (recommended to be under <code>src/shared</code> folder). </p>
 <h3 id="repositories">Repositories</h3>
 <p>Repositories are holders for Endpoints and other repositories, these repositories can have a scope, either being <code>development</code> or <code>production</code> (covered on "Tina's yaml configuration"). </p>
-<div class="highlight"><pre><span></span><code><span class="nx">Network</span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">endpoints</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
-<span class="nx">Network</span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">endpoints</span><span class="w"> </span><span class="p">}).</span><span class="nx">developmentOnly</span><span class="p">();</span><span class="w"> </span><span class="c1">// Limited to the development enviroment</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">Network</span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">endpoints</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">Network</span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">endpoints</span><span class="w"> </span><span class="p">}).</span><span class="nx">developmentOnly</span><span class="p">();</span><span class="w"> </span><span class="c1">// Limited to the development enviroment</span>
 </code></pre></div>
 <h3 id="endpoints">Endpoints</h3>
 <p>Endpoints are, as the name says, end points on your networking. These endpoints can be retrieved, send or receive information from either context. Endpoints are the core to the networking.</p>
 <h6 id="register-endpoints">Register endpoints</h6>
 <p>To start working with the Networking, you should be registering it once and recommended to be in a single file.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// src/shared/net.ts</span><span class="w"></span>
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Endpoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Network</span><span class="p">.</span><span class="nx">registerEndpoints</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">furniture</span><span class="o">:</span><span class="w"> </span><span class="kt">Network.repository</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">checkId</span><span class="o">:</span><span class="w"> </span><span class="kt">Network.Method.GET</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="o">&gt;</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">}),</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/shared/net.ts</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Endpoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Network</span><span class="p">.</span><span class="nx">registerEndpoints</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">furniture</span><span class="o">:</span><span class="w"> </span><span class="kt">Network.repository</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">checkId</span><span class="o">:</span><span class="w"> </span><span class="kt">Network.Method.GET</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="w">    </span><span class="p">}),</span>
+<span class="p">});</span>
 </code></pre></div>
 <h6 id="get-endpoint">GET Endpoint</h6>
 <p>GET is a way to communicate between both contexts, being able to receive data, and return back data depending on that data received earlier. GET only can be retrieved from the client, so the server AND ONLY the server can reply to these requests.</p>
 <p>The way to declare a GET Endpoint is to use the <code>Method</code> namespace inside <code>Tina</code> and pass the types to the generic functions as it follows.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">Network</span><span class="p">.</span><span class="nx">Method</span><span class="p">.</span><span class="nx">GET</span><span class="o">&lt;</span><span class="nx">sendType</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">returnType</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">Network</span><span class="p">.</span><span class="nx">Method</span><span class="p">.</span><span class="nx">GET</span><span class="o">&lt;</span><span class="nx">sendType</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">returnType</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="o">&gt;</span><span class="p">();</span>
 </code></pre></div>
 <p>The <code>sendType</code> it's optional, and can be undefined, or just be skipped completely when using <code>.get()</code> instead of <code>.send()</code>.</p>
 <p>To connect and listen to clients requests, you use <code>.reply(callback: Callback)</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="o">&gt;</span><span class="nx">GETEndpoint</span><span class="p">.</span><span class="nx">reply</span><span class="p">((</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Conditions</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">Registry</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">id</span><span class="p">)));</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">boolean</span><span class="o">&gt;</span><span class="nx">GETEndpoint</span><span class="p">.</span><span class="nx">reply</span><span class="p">((</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Conditions</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">Registry</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">id</span><span class="p">)));</span>
 </code></pre></div>
 <p>To get the data back from the request, you will need to make the request itself. This is made with 2 methods.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">GETEndpoint</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span><span class="w"> </span><span class="c1">// NO data being sent, so it doesn&#39;t take anything.</span><span class="w"></span>
-<span class="nx">GETEndpoint</span><span class="p">.</span><span class="nx">send</span><span class="p">(...);</span><span class="w"> </span><span class="c1">// Data can be sent to the server.</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">GETEndpoint</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span><span class="w"> </span><span class="c1">// NO data being sent, so it doesn&#39;t take anything.</span>
+<span class="nx">GETEndpoint</span><span class="p">.</span><span class="nx">send</span><span class="p">(...);</span><span class="w"> </span><span class="c1">// Data can be sent to the server.</span>
 </code></pre></div>
 <p>Both ways will send the request and so on, expect for the reply.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">GETEndpoint</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">when</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">Conditions</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">hasId</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">hasId</span><span class="p">))</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="p">...;</span><span class="w"> </span><span class="c1">// perform client furniture placement</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">GETEndpoint</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">Conditions</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">hasId</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">hasId</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">...;</span><span class="w"> </span><span class="c1">// perform client furniture placement</span>
+<span class="w">    </span><span class="p">});</span>
 
-<span class="nx">GETEndpoint</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;{2345-23142-BED}&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">GETEndpoint</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;{2345-23142-BED}&quot;</span><span class="p">);</span>
 </code></pre></div>
 <h6 id="update-endpoint">UPDATE Endpoint</h6>
 <p>UPDATE is a way to communicate to the client and perform, as the name says, updates to it. </p>
 <p>The way to declare an UPDATE Endpoint is to use the <code>Method</code> namespace inside <code>Tina</code> and pass the type to send to the client as it follows.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">Network</span><span class="p">.</span><span class="nx">Method</span><span class="p">.</span><span class="nx">UPDATE</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">Network</span><span class="p">.</span><span class="nx">Method</span><span class="p">.</span><span class="nx">UPDATE</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
 </code></pre></div>
 <p>The client is the only one that can connect to this Endpoint, and so the server it's only available to send data to it.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Client</span><span class="w"></span>
-<span class="nx">UPDATEEndpoint</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">when</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">Conditions</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Hello!&quot;</span><span class="p">))</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="p">...;</span><span class="w"> </span><span class="c1">// code is right, perform client operation</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Client</span>
+<span class="nx">UPDATEEndpoint</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">Conditions</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Hello!&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">...;</span><span class="w"> </span><span class="c1">// code is right, perform client operation</span>
+<span class="w">    </span><span class="p">});</span>
 
-<span class="c1">// Server</span><span class="w"></span>
-<span class="nx">UPDATEEndpoint</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Server</span>
+<span class="nx">UPDATEEndpoint</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">);</span>
 </code></pre></div>
 <h6 id="post-endpoint">POST Endpoint</h6>
 <p>POST is a way to send data to the server. Either to work with it, or to verify it (though verifications are highly discouraged to use POST, instead, use GET).</p>
 <p>The way to declare an UPDATE Endpoint is to use the <code>Method</code> namespace inside <code>Tina</code> and pass the type to send to the client as it follows.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">Network</span><span class="p">.</span><span class="nx">Method</span><span class="p">.</span><span class="nx">POST</span><span class="o">&lt;</span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">kills</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">Network</span><span class="p">.</span><span class="nx">Method</span><span class="p">.</span><span class="nx">POST</span><span class="o">&lt;</span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">kills</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="o">&gt;</span><span class="p">();</span>
 </code></pre></div>
 <p>The server is the only one that can connect to this Endpoint, and so the client it's only available to send data to it.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Server</span><span class="w"></span>
-<span class="nx">POSTEndpoint</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">when</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">Conditions</span><span class="p">.</span><span class="nx">create</span><span class="p">(({</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Register</span><span class="p">.</span><span class="nx">checkDeath</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">kills</span><span class="p">)));</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="p">...;</span><span class="w"> </span><span class="c1">// all right, perform anything needed</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Server</span>
+<span class="nx">POSTEndpoint</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">when</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">Conditions</span><span class="p">.</span><span class="nx">create</span><span class="p">(({</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Register</span><span class="p">.</span><span class="nx">checkDeath</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">kills</span><span class="p">)));</span>
+<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">...;</span><span class="w"> </span><span class="c1">// all right, perform anything needed</span>
+<span class="w">    </span><span class="p">});</span>
 
-<span class="c1">// Client</span><span class="w"></span>
-<span class="nx">POSTEndpoint</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span><span class="w"></span>
-<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">kills</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="p">})</span><span class="w"></span>
+<span class="c1">// Client</span>
+<span class="nx">POSTEndpoint</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">kills</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">})</span>
 </code></pre></div>
 <h6 id="middleware">Middleware</h6>
 <p>Coming soon.</p>
@@ -1715,7 +1716,7 @@
     <script id="__config" type="application/json">{"base": "../../../../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

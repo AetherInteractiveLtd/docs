@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1606,49 +1606,50 @@
   
 
 
+
 <h1 id="processes">Processes</h1>
 <p>Processes are used to define logic which runs on every tick.</p>
 <h2 id="creation">Creation</h2>
 <p>Processes should only be created by calling Tina.process() to guarantee there will only ever be one Process assigned to each unique string.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">GameProcess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">process</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">GameProcess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">process</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="use">Use</h2>
 <p>After a Process has been created, callbacks can be added to the Process using .do().
 You can add as many callbacks as you want to each Process, and they will be executed in the order that they're added.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">GameProcess</span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">doSomething</span><span class="p">()</span><span class="w"></span>
-<span class="p">})</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">GameProcess</span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">doSomething</span><span class="p">()</span>
+<span class="p">})</span>
 
-<span class="nx">GameProcess</span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">doSomethingElse</span><span class="p">()</span><span class="w"></span>
-<span class="p">})</span><span class="w"></span>
+<span class="nx">GameProcess</span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">doSomethingElse</span><span class="p">()</span>
+<span class="p">})</span>
 </code></pre></div>
 <p>At this point all that's left is to start your Process by calling .resume().
 Resuming a Process adds it to the Scheduler to be updated every tick and also un-suspends the Process if it was previously suspended with .suspend().</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// doSomething() and doSomethingElse() will now be called on every tick</span><span class="w"></span>
-<span class="nx">GameProcess</span><span class="p">.</span><span class="nx">resume</span><span class="p">()</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// doSomething() and doSomethingElse() will now be called on every tick</span>
+<span class="nx">GameProcess</span><span class="p">.</span><span class="nx">resume</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="suspension">Suspension</h2>
 <p>Suspending Processes is a way to temporarily disable them for a set amount of time in ticks.
 After the duration passes, the suspension is removed and the Process will automatically resume running callbacks on each tick.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">GameProcess</span><span class="p">.</span><span class="nx">suspend</span><span class="p">(</span><span class="mf">60</span><span class="p">)</span><span class="w"> </span><span class="c1">// Suspends the Process for 60 ticks</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">GameProcess</span><span class="p">.</span><span class="nx">suspend</span><span class="p">(</span><span class="mf">60</span><span class="p">)</span><span class="w"> </span><span class="c1">// Suspends the Process for 60 ticks</span>
 </code></pre></div>
 <h2 id="example">Example</h2>
-<div class="highlight"><pre><span></span><code><span class="cm">/* Create new process */</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">GameProcess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">process</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="cm">/* Create new process */</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">GameProcess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Tina</span><span class="p">.</span><span class="nx">process</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">)</span>
 
-<span class="cm">/* Add a callback to run on each tick */</span><span class="w"></span>
-<span class="nx">GameProcess</span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// Do something</span><span class="w"></span>
-<span class="w">    </span><span class="nx">doSomething</span><span class="p">()</span><span class="w"></span>
+<span class="cm">/* Add a callback to run on each tick */</span>
+<span class="nx">GameProcess</span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Do something</span>
+<span class="w">    </span><span class="nx">doSomething</span><span class="p">()</span>
 
-<span class="w">    </span><span class="c1">// Suspend the Process for 1 tick after this callback runs</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// This is effectively calling this function every other tick</span><span class="w"></span>
-<span class="w">    </span><span class="nx">GameProcess</span><span class="p">.</span><span class="nx">suspend</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span><span class="w"></span>
-<span class="p">})</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Suspend the Process for 1 tick after this callback runs</span>
+<span class="w">    </span><span class="c1">// This is effectively calling this function every other tick</span>
+<span class="w">    </span><span class="nx">GameProcess</span><span class="p">.</span><span class="nx">suspend</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+<span class="p">})</span>
 
-<span class="cm">/* Adds the Process to the Scheduler to update on each tick */</span><span class="w"></span>
-<span class="nx">GameProcess</span><span class="p">.</span><span class="nx">resume</span><span class="p">()</span><span class="w"></span>
+<span class="cm">/* Adds the Process to the Scheduler to update on each tick */</span>
+<span class="nx">GameProcess</span><span class="p">.</span><span class="nx">resume</span><span class="p">()</span>
 </code></pre></div>
 
 
@@ -1699,7 +1700,7 @@ After the duration passes, the suspension is removed and the Process will automa
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

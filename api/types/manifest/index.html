@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1571,24 +1571,25 @@
   
 
 
+
   <h1>Manifest</h1>
 
 <h2 id="manifest"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6m0 2h7v5h5v11H6V4m2 8v2h8v-2H8m0 4v2h5v-2H8Z"/></svg></span> Manifest</h2>
 <p>The Manifest is a file you need to have in your workspace whenever working with Tina.
 This file should always be in the root of your project.</p>
-<div class="highlight"><span class="filename">manifest.tina.yml</span><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Hello</span><span class="nv"> </span><span class="s">World&quot;</span><span class="w"> </span><span class="c1"># (1)!</span><span class="w"></span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.0.1&quot;</span><span class="w"> </span><span class="c1"># (2)!</span><span class="w"></span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;My</span><span class="nv"> </span><span class="s">First</span><span class="nv"> </span><span class="s">Ever</span><span class="nv"> </span><span class="s">Project!&quot;</span><span class="w"> </span><span class="c1"># (3)!</span><span class="w"></span>
-<span class="nt">config</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">tickrate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"> </span><span class="c1"># (6)!</span><span class="w"></span>
-<span class="w">    </span><span class="nt">net</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">compression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># (4)!</span><span class="w"></span>
-<span class="w">    </span><span class="nt">supported_languages</span><span class="p">:</span><span class="w"> </span><span class="c1"># (5)!</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fr-fr</span><span class="w"> </span><span class="c1"># French</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cs-cz</span><span class="w"> </span><span class="c1"># Czech</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en-us</span><span class="w"> </span><span class="c1"># English</span><span class="w"></span>
-<span class="w">    </span><span class="nt">max_players</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"> </span><span class="c1"># (7)!</span><span class="w"></span>
-<span class="nt">tina</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;dev&quot;</span><span class="w"> </span><span class="c1"># IMPORTANT (8)</span><span class="w"></span>
+<div class="highlight"><span class="filename">manifest.tina.yml</span><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Hello</span><span class="nv"> </span><span class="s">World&quot;</span><span class="w"> </span><span class="c1"># (1)!</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.0.1&quot;</span><span class="w"> </span><span class="c1"># (2)!</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;My</span><span class="nv"> </span><span class="s">First</span><span class="nv"> </span><span class="s">Ever</span><span class="nv"> </span><span class="s">Project!&quot;</span><span class="w"> </span><span class="c1"># (3)!</span>
+<span class="nt">config</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tickrate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"> </span><span class="c1"># (6)!</span>
+<span class="w">    </span><span class="nt">net</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">compression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># (4)!</span>
+<span class="w">    </span><span class="nt">supported_languages</span><span class="p">:</span><span class="w"> </span><span class="c1"># (5)!</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fr-fr</span><span class="w"> </span><span class="c1"># French</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cs-cz</span><span class="w"> </span><span class="c1"># Czech</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en-us</span><span class="w"> </span><span class="c1"># English</span>
+<span class="w">    </span><span class="nt">max_players</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"> </span><span class="c1"># (7)!</span>
+<span class="nt">tina</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;dev&quot;</span><span class="w"> </span><span class="c1"># IMPORTANT (8)</span>
 </code></pre></div>
 <ol>
 <li>The name of your project, this can always be changed!</li>
@@ -1609,11 +1610,11 @@ This file should always be in the root of your project.</p>
 </thead>
 <tbody>
 <tr>
-<td><code class="highlight"><span class="s2">&quot;dev&quot;</span><span class="w"></span></code></td>
+<td><code class="highlight"><span class="s2">&quot;dev&quot;</span></code></td>
 <td>Active development, this will leave any <code>.developmentOnly</code> endpoints on and will allow native console access.</td>
 </tr>
 <tr>
-<td><code class="highlight"><span class="s2">&quot;stable&quot;</span><span class="w"></span></code></td>
+<td><code class="highlight"><span class="s2">&quot;stable&quot;</span></code></td>
 <td>The game is currently published, all <code>.developmentOnly</code> endpoints are off and native console access is no longer allowed.</td>
 </tr>
 </tbody>
@@ -1672,7 +1673,7 @@ This file should always be in the root of your project.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

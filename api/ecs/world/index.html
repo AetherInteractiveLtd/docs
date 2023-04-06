@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1885,434 +1885,435 @@
   
 
 
+
   <h1>World</h1>
 
 <h2 id="world"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg></span> World</h2>
 <p>The world is the main access point for ECS functionality. It is responsible for creating and managing entities, components, and systems.</p>
 <p>Typically there is only a single world, but there is no limit on the number of worlds an experience can create.</p>
 <h4 id="usage">Usage</h4>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">World</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">World</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">World</span><span class="p">({...});</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">World</span><span class="p">({...});</span>
 </code></pre></div>
 <h4 id="parameters">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span></code></dt>
 <dd>
 <p>A unique identifier (UUID) for the world.</p>
 </dd>
-<dt><code class="highlight"><span class="k">readonly</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">WorldOptions</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">readonly</span><span class="w"> </span><span class="nx">options?</span><span class="o">:</span><span class="w"> </span><span class="kt">WorldOptions</span></code></dt>
 <dd>
 <p>The <a href="../api/worldoptions.md/#markdown" title="WorldOptions">WorldOptions</a> that were passed into the constructor when the world was created.</p>
 </dd>
 </dl>
-<h3 id="add"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">add</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">EntityId</span><span class="w"></span></code></strong></h3>
+<h3 id="add"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">add</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">EntityId</span></code></strong></h3>
 <p>Creates a new entity in the world.</p>
 <p>When the entity is added to the world, the id will be assigned immediately, but as all other operations are deferred, the entity will not be added to any queries until the system has finished executing.</p>
 <h4 id="returns">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">EntityId</span></code></dt>
 <dd>
 <p>The id of the newly created entity.</p>
 </dd>
 </dl>
-<h3 id="addComponent"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">addComponent</span><span class="o">&lt;</span><span class="nx">T</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Tree</span><span class="o">&lt;</span><span class="nx">Type</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">Component</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="addComponent"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">addComponent</span><span class="o">&lt;</span><span class="nx">T</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Tree</span><span class="o">&lt;</span><span class="nx">Type</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">Component</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Adds a given component to the entity. If the entity does not exist, then an error will be thrown. No error will be thrown if the entity already has the component.</p>
 <h4 id="parameters_1">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to add the component.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">Component</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">Component</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span></code></dt>
 <dd>
-<p>The component to add to the entity, which must have been defined previously with <a href="../api/component.md/#markdown" title="createComponent()"><code class="highlight"><span class="nx">createComponent</span><span class="p">()</span><span class="w"></span></code></a>.</p>
+<p>The component to add to the entity, which must have been defined previously with <a href="../api/component.md/#markdown" title="createComponent()"><code class="highlight"><span class="nx">createComponent</span><span class="p">()</span></code></a>.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">data?</span><span class="o">:</span><span class="w"> </span><span class="kt">Partial</span><span class="o">&lt;</span><span class="nx">OptionalKeys</span><span class="o">&lt;</span><span class="nx">GetComponentSchema</span><span class="o">&lt;</span><span class="nx">C</span><span class="o">&gt;&gt;</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">data?</span><span class="o">:</span><span class="w"> </span><span class="kt">Partial</span><span class="o">&lt;</span><span class="nx">OptionalKeys</span><span class="o">&lt;</span><span class="nx">GetComponentSchema</span><span class="o">&lt;</span><span class="nx">C</span><span class="o">&gt;&gt;</span></code></dt>
 <dd>
 <p>The optional data to initialize the component with. This must match keys of the original component schema.</p>
 </dd>
 </dl>
 <h4 id="returns_1">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="addTag"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">addTag</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="addTag"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">addTag</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Adds a tag component to an entity.</p>
 <h4 id="parameters_2">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to add the tag.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span></code></dt>
 <dd>
-<p>The tag component to add to the entity, which must have been defined previously with <a href="../api/component.md/#markdown" title="createTag()"><code class="highlight"><span class="nx">createTag</span><span class="p">()</span><span class="w"></span></code></a>.</p>
+<p>The tag component to add to the entity, which must have been defined previously with <a href="../api/component.md/#markdown" title="createTag()"><code class="highlight"><span class="nx">createTag</span><span class="p">()</span></code></a>.</p>
 </dd>
 </dl>
 <h4 id="returns_2">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="clear"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">clear</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"></span></code></strong></h3>
+<h3 id="clear"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">clear</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span></code></strong></h3>
 <p>Removes all entities from the world.</p>
 <div class="admonition warning">
 <p class="admonition-title">This is currently not implemented and will throw an error if called.</p>
 </div>
-<h3 id="createQuery"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">createQuery</span><span class="p">(</span><span class="nx">...raw</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">RawQuery</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Query</span><span class="w"></span></code></strong></h3>
+<h3 id="createQuery"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">createQuery</span><span class="p">(</span><span class="nx">...raw</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">RawQuery</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Query</span></code></strong></h3>
 <p>Creates a new query to filter entities based on the given components.</p>
 <h4 id="usage-example">Usage Example:</h4>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ALL</span><span class="p">,</span><span class="w"> </span><span class="nx">ANY</span><span class="p">,</span><span class="w"> </span><span class="nx">NOT</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">,</span><span class="w"> </span><span class="nx">Acceleration</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./components&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ALL</span><span class="p">,</span><span class="w"> </span><span class="nx">ANY</span><span class="p">,</span><span class="w"> </span><span class="nx">NOT</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@rbxts/tina&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">,</span><span class="w"> </span><span class="nx">Acceleration</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./components&quot;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">createQuery</span><span class="p">(</span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">ANY</span><span class="p">(</span><span class="nx">Velocity</span><span class="p">,</span><span class="w"> </span><span class="nx">NOT</span><span class="p">(</span><span class="nx">Acceleration</span><span class="p">)));</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">createQuery</span><span class="p">(</span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">ANY</span><span class="p">(</span><span class="nx">Velocity</span><span class="p">,</span><span class="w"> </span><span class="nx">NOT</span><span class="p">(</span><span class="nx">Acceleration</span><span class="p">)));</span>
 </code></pre></div>
 <h4 id="parameters_3">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">...raw</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">RawQuery</span><span class="o">&gt;</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">...raw</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">RawQuery</span><span class="o">&gt;</span></code></dt>
 <dd>
-<p>A query using components, and optionally the provided query helper functions <a href="../api/query.md/#markdown" title="ALL()"><code class="highlight"><span class="nx">ALL</span><span class="p">()</span><span class="w"></span></code></a>, <a href="../api/query.md/#markdown" title="ANY()"><code class="highlight"><span class="nx">ANY</span><span class="p">()</span><span class="w"></span></code></a>, and <a href="../api/query.md/#markdown" title="NOT()"><code class="highlight"><span class="nx">NOT</span><span class="p">()</span><span class="w"></span></code></a>.</p>
+<p>A query using components, and optionally the provided query helper functions <a href="../api/query.md/#markdown" title="ALL()"><code class="highlight"><span class="nx">ALL</span><span class="p">()</span></code></a>, <a href="../api/query.md/#markdown" title="ANY()"><code class="highlight"><span class="nx">ANY</span><span class="p">()</span></code></a>, and <a href="../api/query.md/#markdown" title="NOT()"><code class="highlight"><span class="nx">NOT</span><span class="p">()</span></code></a>.</p>
 </dd>
 </dl>
 <h4 id="returns_3">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">Query</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">Query</span></code></dt>
 <dd>
 <p>A new <a href="../api/query.md/#markdown" title="Query">Query</a>.</p>
 </dd>
 </dl>
-<h3 id="destroy"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">destroy</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"></span></code></strong></h3>
+<h3 id="destroy"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">destroy</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span></code></strong></h3>
 <p>Halts the current execution of the world, and destroys the world.</p>
 <div class="admonition warning">
 <p class="admonition-title">Depending on the number of entities a world has, this can be a costly operation as we have to return all the entities to the pool.</p>
 </div>
-<h3 id="disableSystem"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">disableSystem</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="disableSystem"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">disableSystem</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Disables the given system. This will prevent the system from being executed, but will not remove it from the scheduler.</p>
 <p>As scheduling a system can be a potentially expensive operation, this should be used for systems that are expected to be re-enabled in the future.</p>
 <h4 id="parameters_4">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span></code></dt>
 <dd>
 <p>The system to disable.</p>
 </dd>
 </dl>
 <h4 id="returns_4">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="enableSystem"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">enableSystem</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="enableSystem"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">enableSystem</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Enables the given system.</p>
 <p>This will not error if a system that is already enabled is enabled again.</p>
 <h4 id="parameters_5">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span></code></dt>
 <dd>
 <p>The system that should be enabled.</p>
 </dd>
 </dl>
 <h4 id="returns_5">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="flush"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">flush</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"></span></code></strong></h3>
+<h3 id="flush"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">flush</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span></code></strong></h3>
 <p>Flushes any pending entity removal, or deferred component changes in the world.</p>
 <p>This is called automatically whenever a system has finished executing, and should not typically be called manually.</p>
 <p>If you are not using the inbuilt scheduler, you should call this method at regular intervals to ensure that any pending changes are applied.</p>
-<h3 id="has"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">has</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span></code></strong></h3>
+<h3 id="has"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">has</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span></code></strong></h3>
 <p>Checks if a given entity is currently alive in the world.</p>
 <h4 id="parameters_6">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to check.</p>
 </dd>
 </dl>
 <h4 id="returns_6">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="kt">boolean</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="kt">boolean</span></code></dt>
 <dd>
 <p>True if the entity is alive, false otherwise.</p>
 </dd>
 </dl>
-<h3 id="hasAllOf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">hasAllOf</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span></code></strong></h3>
+<h3 id="hasAllOf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">hasAllOf</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span></code></strong></h3>
 <p>Checks if a given entity has all of the given components.</p>
 <h4 id="parameters_7">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to check.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span></code></dt>
 <dd>
 <p>Any number of components to check against.</p>
 </dd>
 </dl>
 <h4 id="returns_7">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="kt">boolean</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="kt">boolean</span></code></dt>
 <dd>
 <p>True if the entity has all of the given components, false otherwise.</p>
 </dd>
 </dl>
-<h3 id="hasAnyOf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">hasAnyOf</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span></code></strong></h3>
+<h3 id="hasAnyOf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">hasAnyOf</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span></code></strong></h3>
 <p>Checks if a given entity has any of the given components.</p>
 <h4 id="parameters_8">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to check.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span></code></dt>
 <dd>
 <p>Any number of components to check against.</p>
 </dd>
 </dl>
 <h4 id="returns_8">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="kt">boolean</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="kt">boolean</span></code></dt>
 <dd>
 <p>True if the entity has at least one of the given components, false otherwise.</p>
 </dd>
 </dl>
-<h3 id="hasComponent"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">hasComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">AnyComponent</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span></code></strong></h3>
+<h3 id="hasComponent"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">hasComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">AnyComponent</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span></code></strong></h3>
 <p>Returns whether or not the given entity has the given component.</p>
 <h4 id="parameters_9">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to check.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">AnyComponent</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">AnyComponent</span></code></dt>
 <dd>
 <p>Any number of components to check against.</p>
 </dd>
 </dl>
 <h4 id="returns_9">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="kt">boolean</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="kt">boolean</span></code></dt>
 <dd>
 <p>True if the entity has the given component, false otherwise.</p>
 </dd>
 </dl>
-<h3 id="hasNoneOf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">hasNoneOf</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span></code></strong></h3>
+<h3 id="hasNoneOf"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">hasNoneOf</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span></code></strong></h3>
 <p>Checks if a given entity has none of the given components.</p>
 <h4 id="parameters_10">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to check.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">...components</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">AnyComponent</span><span class="o">&gt;</span></code></dt>
 <dd>
 <p>Any number of components to check against.</p>
 </dd>
 </dl>
 <h4 id="returns_10">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="kt">boolean</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="kt">boolean</span></code></dt>
 <dd>
 <p>True if the entity has none of the given components, false otherwise.</p>
 </dd>
 </dl>
-<h3 id="hasTag"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">hasTag</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span></code></strong></h3>
+<h3 id="hasTag"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">hasTag</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span></code></strong></h3>
 <p>Returns whether or not the given entity has the given tag.</p>
 <h4 id="parameters_11">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to check.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span></code></dt>
 <dd>
 <p>The tag to check against.</p>
 </dd>
 </dl>
 <h4 id="returns_11">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="kt">boolean</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="kt">boolean</span></code></dt>
 <dd>
 <p>True if the entity has the given tag, false otherwise.</p>
 </dd>
 </dl>
-<h3 id="pause"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">pause</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"></span></code></strong></h3>
+<h3 id="pause"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">pause</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span></code></strong></h3>
 <p>Pauses the execution of the world.</p>
 <div class="admonition warning">
 <p class="admonition-title">This is currently not implemented and will throw an error if called.</p>
 </div>
-<h3 id="play"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">play</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"></span></code></strong></h3>
+<h3 id="play"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">play</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span></code></strong></h3>
 <p>Continues the execution of the world from its current state.</p>
 <div class="admonition warning">
 <p class="admonition-title">This is currently not implemented and will throw an error if called.</p>
 </div>
-<h3 id="remove"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">remove</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="remove"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">remove</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Removes the given entity from the world, including all of its components.</p>
-<p>The entity will be removed from the world upon the next call to <a href="../api/world.md/#markdown" title="flush()"><code class="highlight"><span class="nx">flush</span><span class="p">()</span><span class="w"></span></code></a>.</p>
+<p>The entity will be removed from the world upon the next call to <a href="../api/world.md/#markdown" title="flush()"><code class="highlight"><span class="nx">flush</span><span class="p">()</span></code></a>.</p>
 <h4 id="parameters_12">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to remove.</p>
 </dd>
 </dl>
 <h4 id="returns_12">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="removeComponent"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">removeComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">AnyComponent</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="removeComponent"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">removeComponent</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">AnyComponent</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Removes the given component from the given entity.</p>
-<p>The component will be removed from the entity upon the next call to <a href="../api/world.md/#markdown" title="flush()"><code class="highlight"><span class="nx">flush</span><span class="p">()</span><span class="w"></span></code></a>.</p>
+<p>The component will be removed from the entity upon the next call to <a href="../api/world.md/#markdown" title="flush()"><code class="highlight"><span class="nx">flush</span><span class="p">()</span></code></a>.</p>
 <h4 id="parameters_13">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to remove the component.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">AnyComponent</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">component</span><span class="o">:</span><span class="w"> </span><span class="kt">AnyComponent</span></code></dt>
 <dd>
 <p>The component to remove.</p>
 </dd>
 </dl>
 <h4 id="returns_13">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="removeQuery"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">removeQuery</span><span class="p">(</span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kt">Query</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="removeQuery"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">removeQuery</span><span class="p">(</span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kt">Query</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Removes a query from the world.</p>
 <p>Queries typically do not need to be removed and should last the lifetime of the world. However, this method is provided for cases in which this statement proves false.</p>
 <h4 id="parameters_14">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kt">Query</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kt">Query</span></code></dt>
 <dd>
 <p>The query to remove.</p>
 </dd>
 </dl>
 <h4 id="returns_14">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="removeTag"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">removeTag</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="removeTag"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">removeTag</span><span class="p">(</span><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Removes the given tag from the given entity.</p>
 <h4 id="parameters_15">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">entityId</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityId</span></code></dt>
 <dd>
 <p>The id of the entity to remove the tag.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">tag</span><span class="o">:</span><span class="w"> </span><span class="kt">TagComponent</span></code></dt>
 <dd>
 <p>The tag to remove.</p>
 </dd>
 </dl>
 <h4 id="returns_15">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="scheduleSystem"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">scheduleSystem</span><span class="p">(</span><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="scheduleSystem"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">scheduleSystem</span><span class="p">(</span><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Schedules an individual system to be executed in the world.</p>
-<p>Calling this function is a potentially expensive operation and should be avoided if possible. It is best advised to use <a href="../api/world.md/#markdown" title="scheduleSystems()"><code class="highlight"><span class="nx">scheduleSystems</span><span class="p">()</span><span class="w"></span></code></a> instead, and add multiple systems at once - this is to avoid the unnecessary overhead of sorting systems.</p>
+<p>Calling this function is a potentially expensive operation and should be avoided if possible. It is best advised to use <a href="../api/world.md/#markdown" title="scheduleSystems()"><code class="highlight"><span class="nx">scheduleSystems</span><span class="p">()</span></code></a> instead, and add multiple systems at once - this is to avoid the unnecessary overhead of sorting systems.</p>
 <h4 id="parameters_16">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span></code></dt>
 <dd>
 <p>The system to schedule.</p>
 </dd>
 </dl>
 <h4 id="returns_16">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="scheduleSystems"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">scheduleSystems</span><span class="p">(</span><span class="nx">...systems</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">System</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="scheduleSystems"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">scheduleSystems</span><span class="p">(</span><span class="nx">...systems</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">System</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Schedules a given set of systems to be executed in the world.</p>
 <h4 id="parameters_17">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">...systems</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">System</span><span class="o">&gt;</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">...systems</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">System</span><span class="o">&gt;</span></code></dt>
 <dd>
 <p>Any number of systems to schedule.</p>
 </dd>
 </dl>
 <h4 id="returns_17">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="size"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">size</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"></span></code></strong></h3>
+<h3 id="size"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">size</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span></code></strong></h3>
 <h4 id="returns_18">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="kt">number</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="kt">number</span></code></dt>
 <dd>
 <p>Returns the number of entities currently in the world.</p>
 </dd>
 </dl>
-<h3 id="start"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">start</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="start"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">start</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Starts the execution of the world.</p>
 <p>This should only be called after all components, and preferably all systems have been registered.</p>
-<h3 id="toString"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">toString</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"></span></code></strong></h3>
+<h3 id="toString"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">toString</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span></code></strong></h3>
 <h4 id="returns_19">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="kt">string</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="kt">string</span></code></dt>
 <dd>
 <p>The name of the world. This defaults to "World", unless specified by the WorldOptions.</p>
 </dd>
 </dl>
-<h3 id="unscheduleSystem"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">unscheduleSystem</span><span class="p">(</span><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="unscheduleSystem"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">unscheduleSystem</span><span class="p">(</span><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Unschedule an individual system from the world.</p>
-<p>If a system needs to be re-scheduled at a later time, then it is recommended instead to disable it using <a href="../api/world.md/#markdown" title="disableSystem()"><code class="highlight"><span class="nx">disableSystem</span><span class="p">()</span><span class="w"></span></code></a>, as scheduling a system will require the systems to be sorted again.</p>
+<p>If a system needs to be re-scheduled at a later time, then it is recommended instead to disable it using <a href="../api/world.md/#markdown" title="disableSystem()"><code class="highlight"><span class="nx">disableSystem</span><span class="p">()</span></code></a>, as scheduling a system will require the systems to be sorted again.</p>
 <h4 id="parameters_18">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">system</span><span class="o">:</span><span class="w"> </span><span class="kt">System</span></code></dt>
 <dd>
 <p>The system to unschedule.</p>
 </dd>
 </dl>
 <h4 id="returns_20">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.</p>
 </dd>
 </dl>
-<h3 id="unscheduleSystems"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">unscheduleSystems</span><span class="p">(</span><span class="nx">...systems</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">System</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="unscheduleSystems"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">unscheduleSystems</span><span class="p">(</span><span class="nx">...systems</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">System</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Unschedule a given set of systems from the world.</p>
-<p>If a system needs to be re-scheduled at a later time, then it is recommended instead to disable it using <a href="../api/world.md/#markdown" title="disableSystem()"><code class="highlight"><span class="nx">disableSystem</span><span class="p">()</span><span class="w"></span></code></a>, as scheduling a system will require the systems to be sorted again.</p>
+<p>If a system needs to be re-scheduled at a later time, then it is recommended instead to disable it using <a href="../api/world.md/#markdown" title="disableSystem()"><code class="highlight"><span class="nx">disableSystem</span><span class="p">()</span></code></a>, as scheduling a system will require the systems to be sorted again.</p>
 <h4 id="parameters_19">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">...systems</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">System</span><span class="o">&gt;</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">...systems</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">System</span><span class="o">&gt;</span></code></dt>
 <dd>
 <p>Any number of systems to unschedule.</p>
 </dd>
 </dl>
 <h4 id="returns_21">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="k">this</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="k">this</span></code></dt>
 <dd>
 <p>The world instance to allow for method chaining.****</p>
 </dd>
@@ -2369,7 +2370,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

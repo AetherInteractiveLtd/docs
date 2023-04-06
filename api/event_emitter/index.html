@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1588,20 +1588,21 @@
   
 
 
+
   <h1>EventEmitter</h1>
 
 <h2 id="eventemitter"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg></span> EventEmitter</h2>
-<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="nx">when</span><span class="p">(</span><span class="nx">name?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">EventListener</span><span class="w"></span></code></strong></h3>
+<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="nx">when</span><span class="p">(</span><span class="nx">name?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">EventListener</span></code></strong></h3>
 <h4 id="parameters">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span></code></dt>
 <dd>
 <p>The <code>name</code> of the event if there is one, refer to <a href="event_listener.md/#using-blank-events">Using Blank Events</a> otherwise.</p>
 </dd>
 </dl>
 <h4 id="returns">Returns</h4>
 <dl>
-<dt><a href="../event_listener/"><code class="highlight"><span class="nx">EventListener</span><span class="w"></span></code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span></a></dt>
+<dt><a href="../event_listener/"><code class="highlight"><span class="nx">EventListener</span></code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span></a></dt>
 <dd>
 <p>Returns a new <code>EventListener</code>.</p>
 </dd>
@@ -1612,13 +1613,13 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">EventEmitter Creation</label><label for="__tabbed_1_2">EventEmitter Usage</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">Tina</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@rbxts/tina&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">Tina</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@rbxts/tina&#39;</span><span class="p">;</span>
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">MyEvents</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">bar</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">newState</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">];</span><span class="w"> </span><span class="c1">// (1)!</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">MyEvents</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">bar</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">newState</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">];</span><span class="w"> </span><span class="c1">// (1)!</span>
+<span class="p">}</span>
 
-<span class="kd">class</span><span class="w"> </span><span class="nx">Foo</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">MyEvents</span><span class="o">&gt;</span><span class="w"> </span><span class="cm">/* (2)! */</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Foo</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">MyEvents</span><span class="o">&gt;</span><span class="w"> </span><span class="cm">/* (2)! */</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div>
 <ol>
 <li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"/></svg></span> This is the spread of arguments that any EventListeners for this specific event will receive.</li>
@@ -1630,19 +1631,19 @@
 </div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">Foo</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="sb">`./Foo`</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">Foo</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="sb">`./Foo`</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Foo</span><span class="p">();</span><span class="w"> </span><span class="c1">// (1)!</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Foo</span><span class="p">();</span><span class="w"> </span><span class="c1">// (1)!</span>
 
-<span class="nx">obj</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// (2)!</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="cm">/* (3)! */</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;bar&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// (2)!</span>
+<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="cm">/* (3)! */</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span>
 </code></pre></div>
 <ol>
 <li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"/></svg></span> EventEmitters can never be static, they need an object in order to work.</li>
 <li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"/></svg></span> We need to fetch a new EventListener for this event, <code>.when(name)</code> will deliver one.</li>
-<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"/></svg></span> We defined this event as <code class="highlight"><span class="nx">bar</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">newState</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">]</span><span class="w"></span></code>, so we can use this parameter in our first <code>.do()</code></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z"/></svg></span> We defined this event as <code class="highlight"><span class="nx">bar</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">newState</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">]</span></code>, so we can use this parameter in our first <code>.do()</code></li>
 </ol>
 </div>
 </div>
@@ -1700,7 +1701,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

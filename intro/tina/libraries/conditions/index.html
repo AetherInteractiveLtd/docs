@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1606,112 +1606,113 @@
   
 
 
+
 <h1 id="conditions">Conditions</h1>
 <p>Conditions are the way to perform and evaluate boolean operations whether they are wrapped around a <code>.condition()</code> or in an if-statement.</p>
 <h3 id="creating-conditions">Creating conditions</h3>
 <p>Conditions can be created as in <code>COND.create(f: (...args) =&gt; boolean)</code>. The function can take optional arguments when being evaluated.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">))</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">5</span><span class="p">))</span>
 </code></pre></div>
 <h3 id="evaluating-conditions">Evaluating conditions</h3>
 <p>Conditions by themselves aren't a big thing, they need some way to be evaluated. To evaluate conditions we use <code>.eval(condition: (boolean | (...args) =&gt; boolean))</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * These are all valid ways to evaluate boolean operations.</span>
-<span class="cm"> */</span><span class="w"></span>
+<span class="cm"> */</span>
 
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">AND</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span><span class="w"></span>
+<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">AND</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span>
 
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span><span class="w"></span>
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)),</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span>
+<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">s</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)),</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">);</span>
 
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">((</span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"></span>
+<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">((</span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
 
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">GameState</span><span class="p">.</span><span class="nx">isOn</span><span class="p">(...));</span><span class="w"></span>
-<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">CharacterController</span><span class="p">.</span><span class="nx">isReplicable</span><span class="p">(),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CharacterDescription</span><span class="p">(...));</span><span class="w"></span>
+<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">GameState</span><span class="p">.</span><span class="nx">isOn</span><span class="p">(...));</span>
+<span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">CharacterController</span><span class="p">.</span><span class="nx">isReplicable</span><span class="p">(),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CharacterDescription</span><span class="p">(...));</span>
 </code></pre></div>
 <h3 id="conditions-events">Conditions &amp; Events</h3>
 <p>Conditions true power starts to reveal for themselves when we use Events and their <code>.condition()</code> method, it's easier to wrap it around this statement to ensure that next-in-queue callback runs. This lets us have conditioning done in one place without polluting core functionality with unnecessary if-statements.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">RoundEvents</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">startRound</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">timer</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">RoundEvents</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">startRound</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">timer</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="kd">class</span><span class="w"> </span><span class="nx">RoundService</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">RoundEvents</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">180</span><span class="p">;</span><span class="w"></span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">RoundService</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">RoundEvents</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">180</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">super</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">();</span>
 
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;startRound&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="w"></span>
-<span class="w">                </span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">currentTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="nx">currentTime</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">duration</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="p">})</span><span class="w"></span>
-<span class="w">            </span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="c1">// If this code is executed, that means that the last condition check has passed,</span><span class="w"></span>
-<span class="w">                </span><span class="c1">// that way, this code ensures that the timer is correct.</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;startRound&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span>
+<span class="w">                </span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">currentTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="nx">currentTime</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">duration</span><span class="p">;</span>
+<span class="w">                </span><span class="p">})</span>
+<span class="w">            </span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// If this code is executed, that means that the last condition check has passed,</span>
+<span class="w">                </span><span class="c1">// that way, this code ensures that the timer is correct.</span>
 
-<span class="w">                </span><span class="p">...;</span><span class="w"> </span><span class="c1">// Finish round, initialize next</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="p">...;</span><span class="w"> </span><span class="c1">// Finish round, initialize next</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Though this can be used with outer state or boolean checkers made by the user.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GameState</span><span class="p">,</span><span class="w"> </span><span class="nx">EGameState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../state&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GameState</span><span class="p">,</span><span class="w"> </span><span class="nx">EGameState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../state&quot;</span><span class="p">;</span>
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">Events</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w"> </span><span class="nx">approve</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Events</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">approve</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="kd">class</span><span class="w"> </span><span class="nx">Meal</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">Events</span><span class="o">&gt;</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">MealDeclaration</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Meal</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">Events</span><span class="o">&gt;</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">MealDeclaration</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span>
 
-<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">super</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">()</span>
 
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;approve&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">GameState</span><span class="p">.</span><span class="nx">isOn</span><span class="p">(</span><span class="nx">EGameState</span><span class="p">.</span><span class="nx">ROUND_ON_GOING</span><span class="p">))</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="p">...;</span><span class="w"> </span><span class="c1">// Approve it if the round is still going</span><span class="w"></span>
-<span class="w">            </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;approve&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">GameState</span><span class="p">.</span><span class="nx">isOn</span><span class="p">(</span><span class="nx">EGameState</span><span class="p">.</span><span class="nx">ROUND_ON_GOING</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="k">do</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="p">...;</span><span class="w"> </span><span class="c1">// Approve it if the round is still going</span>
+<span class="w">            </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">prepare</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">prepare</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="methods-available">Methods available</h3>
 <p>Conditions are not only helpful in evaluating boolean operations, but it provides you an API for those common boolean operations that you may find yourself doing over and over again, such as <code>AND</code>, <code>OR</code>, and <code>NOT</code>, but others like <code>NAND</code>, <code>NOR</code>, <code>XNOR</code> are included as well.</p>
 <h4 id="create">create</h4>
 <p>Takes a function that returns a boolean.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
 <h4 id="eval">eval</h4>
 <p>Evaluates a condition. Data can be passed optionally if it's a function.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">((</span><span class="nx">s</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;condition_met&quot;</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;condition_met&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">((</span><span class="nx">s</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">s</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;condition_met&quot;</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;condition_met&quot;</span><span class="p">);</span>
 </code></pre></div>
 <h4 id="and">AND</h4>
 <p>AND logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">AND</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">AND</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
 </code></pre></div>
 <h4 id="or">OR</h4>
 <p>OR logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">OR</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">OR</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
 </code></pre></div>
 <h4 id="not">NOT</h4>
 <p>NOT logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">NOT</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">NOT</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
 </code></pre></div>
 <h4 id="nor">NOR</h4>
 <p>NOR logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">NOR</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">NOR</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
 </code></pre></div>
 <h4 id="nand">NAND</h4>
 <p>NAND logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">NAND</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">NAND</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
 </code></pre></div>
 <h4 id="xnor">XNOR</h4>
 <p>XNOR logic-gate.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">XNOR</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">COND</span><span class="p">.</span><span class="nb">eval</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">XNOR</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
 </code></pre></div>
 
 
@@ -1762,7 +1763,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

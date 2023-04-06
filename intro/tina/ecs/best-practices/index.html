@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1569,6 +1569,7 @@
   
 
 
+
   <h1>Best Practices</h1>
 
 <h2 id="structuring-systems">Structuring Systems</h2>
@@ -1577,27 +1578,27 @@
 <p><strong>Add</strong>: By adding entities or new components to entities second, we can ensure that any systems that are interested in the new component will be able to pick it up quickly (without waiting for the next frame). For example, if we have a system that adds a <code>Velocity</code> component to entities that have a <code>Position</code> component, but these were performed last, the entity could be spawned into the world and not move until the next frame, causing slight delays.</p>
 <p><strong>Update</strong>: Finally, we can perform any 'update' operations last. We have ensured that any entities that are spawned or removed are handled, and we know that all remaining entities in the world are ready to be processed.</p>
 <p>Systems are allowed to have as many queries as you want (although it is recommended to follow the <a href="https://www.freecodecamp.org/news/keep-it-simple-stupid-how-to-use-the-kiss-principle-in-design/">KISS</a> principle), but the world will not be flushed in between each query and instead only once the system has exited. If you wished to ensure that the world is in an updated state between queries, you should call <code>world.flush()</code> manually.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">ASystem</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">ASystem</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">removeQuery</span><span class="p">(</span><span class="nx">entityId</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// Remove entities that are out of bounds</span><span class="w"></span>
-<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">removeQuery</span><span class="p">(</span><span class="nx">entityId</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Remove entities that are out of bounds</span>
+<span class="w">        </span><span class="p">});</span>
 
-<span class="w">        </span><span class="nx">world</span><span class="p">.</span><span class="nx">flush</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">world</span><span class="p">.</span><span class="nx">flush</span><span class="p">();</span>
 
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="nx">entityId</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// Add new entities that we want to spawn</span><span class="w"></span>
-<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="nx">entityId</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Add new entities that we want to spawn</span>
+<span class="w">        </span><span class="p">});</span>
 
-<span class="w">        </span><span class="nx">world</span><span class="p">.</span><span class="nx">flush</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="nx">world</span><span class="p">.</span><span class="nx">flush</span><span class="p">();</span>
 
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">updateQuery</span><span class="p">(</span><span class="nx">entityId</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// Update the position of entities that exist</span><span class="w"></span>
-<span class="w">        </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">updateQuery</span><span class="p">(</span><span class="nx">entityId</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Update the position of entities that exist</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
 
@@ -1648,7 +1649,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

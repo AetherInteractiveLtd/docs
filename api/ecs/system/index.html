@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1632,100 +1632,101 @@
   
 
 
+
   <h1>System</h1>
 
 <h2 id="system"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg></span> System</h2>
 <p>A system is a collection of logic that is executed on a set of entities. Nearly all ECS actions should be implemented during the execution of a system. Queries should be used inside of system functions to filter entities based on their components and then perform actions on those entities.</p>
 <p>A system should be exported as a singleton class, and can be registered with multiple worlds should be desired.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Query</span><span class="p">,</span><span class="w"> </span><span class="nx">System</span><span class="p">,</span><span class="w"> </span><span class="nx">World</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@rbxts/tina&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./components&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Query</span><span class="p">,</span><span class="w"> </span><span class="nx">System</span><span class="p">,</span><span class="w"> </span><span class="nx">World</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@rbxts/tina&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./components&#39;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">SomeSystem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="p">(</span><span class="kd">class</span><span class="w"> </span><span class="nx">SomeSystem</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kt">Query</span><span class="p">;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">SomeSystem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="p">(</span><span class="kd">class</span><span class="w"> </span><span class="nx">SomeSystem</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">System</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="kt">Query</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">executionGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PreAnimation</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SomeSystem&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">executionGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PreAnimation</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SomeSystem&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">configureQueries</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">createQuery</span><span class="p">(</span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">configureQueries</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">world</span><span class="p">.</span><span class="nx">createQuery</span><span class="p">(</span><span class="nx">Position</span><span class="p">,</span><span class="w"> </span><span class="nx">Velocity</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">entityId</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">query</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// ...</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">entityId</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">query</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// ...</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
 </code></pre></div>
 <h4 id="system-parameters">System Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">after?</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">System</span><span class="o">&gt;</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">after?</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">System</span><span class="o">&gt;</span></code></dt>
 <dd>
 <p>An optional set of systems must be executed before this system. This is useful for ensuring that a system is executed after another system (e.g. when a system relies on the data generated by another system).</p>
 </dd>
-<dt><code class="highlight"><span class="nx">dt?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">dt?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span></code></dt>
 <dd>
 <p>The delta time, in seconds, since the last call of this system. This is useful for systems that need to update based on time, such as physics systems.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">enabled?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">enabled?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span></code></dt>
 <dd>
-<p>Whether or not a system should be called. This should not be called directly. Instead, you should use the <a href="../world/#enableSystem" title="World.enableSystem()"><code class="highlight"><span class="nx">world</span><span class="p">.</span><span class="nx">enableSystem</span><span class="p">()</span><span class="w"></span></code></a> and <a href="../world/#disableSystem" title="World.disableSystem()"><code class="highlight"><span class="nx">world</span><span class="p">.</span><span class="nx">disableSystem</span><span class="p">()</span><span class="w"></span></code></a> functions respectively.</p>
+<p>Whether or not a system should be called. This should not be called directly. Instead, you should use the <a href="../world/#enableSystem" title="World.enableSystem()"><code class="highlight"><span class="nx">world</span><span class="p">.</span><span class="nx">enableSystem</span><span class="p">()</span></code></a> and <a href="../world/#disableSystem" title="World.disableSystem()"><code class="highlight"><span class="nx">world</span><span class="p">.</span><span class="nx">disableSystem</span><span class="p">()</span></code></a> functions respectively.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">executionGroup?</span><span class="o">:</span><span class="w"> </span><span class="kt">ExecutionGroup</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">executionGroup?</span><span class="o">:</span><span class="w"> </span><span class="kt">ExecutionGroup</span></code></dt>
 <dd>
 <p>The group that this system will be executed on, e.g. PostSimulation, PreAnimation, etc. The only requirement for an execution group is that the group has a <code>Connect</code> method.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">name?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">name?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span></code></dt>
 <dd>
 <p>The name of the system. This is primarily used for debugging purposes.</p>
 </dd>
-<dt><code class="highlight"><span class="nx">priority?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">priority?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span></code></dt>
 <dd>
 <p>The priority of the system. Systems with a higher priority will be executed before systems with a lower priority. This number defaults to <code>0</code>, and therefore can be either positive or negative.</p>
 </dd>
 </dl>
-<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"></span></code></strong></h3>
-<p>The onUpdate method is called on every execution of this systems execution group. This should not typically be called manually, and instead, the system should be scheduled according to an execution group using the <a href="../world/#scheduleSystem" title="World.scheduleSystem()"><code class="highlight"><span class="nx">world</span><span class="p">.</span><span class="nx">scheduleSystem</span><span class="p">()</span><span class="w"></span></code></a> function.</p>
+<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="nx">onUpdate</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span></code></strong></h3>
+<p>The onUpdate method is called on every execution of this systems execution group. This should not typically be called manually, and instead, the system should be scheduled according to an execution group using the <a href="../world/#scheduleSystem" title="World.scheduleSystem()"><code class="highlight"><span class="nx">world</span><span class="p">.</span><span class="nx">scheduleSystem</span><span class="p">()</span></code></a> function.</p>
 <h4 id="parameters">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span></code></dt>
 <dd>
 <p>The world that this system is being executed on. This will be automatically passed in by the owning world on each system execution.</p>
 </dd>
 </dl>
-<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">prepare</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="w"></span></code></strong></h3>
+<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">prepare</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span></code></strong></h3>
 <p>The prepare method is optionally called when the system is first run. If this method returns a promise, the system will not be scheduled until the promise resolves.</p>
 <p>This hooks into the world's lifecycle and the world will not be started until all systems have been prepared.</p>
 <p>This is typically used to perform any asynchronous setup logic such as loading external data or setting up external context useful for the system. The world is not accessible at this point so you should not attempt to use it.</p>
 <h4 id="returns">Returns</h4>
 <dl>
-<dt><code class="highlight"><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span></code></dt>
 <dd>
 <p>A promise that resolves when the system has been prepared.</p>
 </dd>
 </dl>
-<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">initialize</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"></span></code></strong></h3>
+<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">initialize</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span></code></strong></h3>
 <p>An optional hook that can be used to initialize the system. Here we could set up initial entities with components, or perform any other setup logic.</p>
 <p>This is useful as this will be called at the start of the world but before the first update. This means we can do any initial setup while ensuring that the first update has all the data required.</p>
 <h4 id="parameters_1">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span></code></dt>
 <dd>
 <p>The world that this system belongs to. This will be passed in automatically.</p>
 </dd>
 </dl>
-<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">configureQueries</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"></span></code></strong></h3>
+<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">configureQueries</span><span class="p">(</span><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span></code></strong></h3>
 <p>The configureQueries method is optionally called when the system is first run. This is a good place to set up any queries that the system will use.</p>
 <h4 id="parameters_2">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">world</span><span class="o">:</span><span class="w"> </span><span class="kt">World</span></code></dt>
 <dd>
 <p>The world that this system is being executed on. This will be automatically passed in by the owning world.</p>
 </dd>
 </dl>
-<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">cleanup</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"></span></code></strong></h3>
+<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">public</span><span class="w"> </span><span class="nx">cleanup</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span></code></strong></h3>
 <p>An optional hook that can be used to clean up the system. This is useful for cleaning up any external context that was created during the system's lifecycle, or for cleaning up queries that were created.</p>
 <div class="admonition note">
 <p class="admonition-title">This will only be called if a system is unscheduled from a world.</p>
@@ -1783,7 +1784,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

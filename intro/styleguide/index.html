@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1526,6 +1526,7 @@
   
 
 
+
 <!--
 _backgroundColor: #202228
 -->
@@ -1594,9 +1595,9 @@ If a folder contains <code>.rbxm</code> or <code>.rbxmx</code> files, these shou
 Braces are **required** for all control structures (`if`, `else`, `for`, `do`, `while`).
 
 Braces are always kept on the same line as the control structure initiated, there will be no C++*isms*. The only exception is a *quick-`if`*;
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">shortCondition</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="c1">// or</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">shortCondition</span><span class="p">())</span><span class="w"> </span><span class="nx">foo</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">shortCondition</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="c1">// or</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">shortCondition</span><span class="p">())</span><span class="w"> </span><span class="nx">foo</span><span class="p">();</span>
 </code></pre></div>
 
 ---
@@ -1645,15 +1646,15 @@ All lines should end at 100 columns before being wrapped or scrapped.
 #### 2.5 Line-Wrapping
 
 <span class="small-text">The prime directive of line-wrapping is: prefer to break at the highest syntactic level;<span/>
-<div class="highlight"><pre><span></span><code><span class="nx">currentTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">currentTotal</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">currentAggregator</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">currentTotal</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.8</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">currentAggregator</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">currentTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">currentTotal</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">currentAggregator</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">currentTotal</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.8</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">currentAggregator</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nx">currentTotal</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">    </span><span class="nx">math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="nx">currentTotal</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="p">(</span><span class="nx">currentAggregator</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">currentTotal</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.2</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.8</span><span class="w"></span>
-<span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="nx">currentAggregator</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">currentTotal</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="nx">math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span>
+<span class="w">        </span><span class="nx">currentTotal</span><span class="p">,</span>
+<span class="w">        </span><span class="p">(</span><span class="nx">currentAggregator</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">currentTotal</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.2</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">        </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">3.8</span>
+<span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="nx">currentAggregator</span>
 </code></pre></div>
 
 ---
@@ -1679,11 +1680,11 @@ All lines should end at 100 columns before being wrapped or scrapped.
 
 Example:
 
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="c1">//    ------ added spaces</span><span class="w"></span>
-<span class="w">    </span><span class="nx">small</span><span class="o">:</span><span class="w">       </span><span class="kt">248_000</span><span class="w"></span>
-<span class="w">    </span><span class="nx">veryDamnBig</span><span class="o">:</span><span class="w"> </span><span class="kt">12</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="c1">//    ------ added spaces</span>
+<span class="w">    </span><span class="nx">small</span><span class="o">:</span><span class="w">       </span><span class="kt">248_000</span>
+<span class="w">    </span><span class="nx">veryDamnBig</span><span class="o">:</span><span class="w"> </span><span class="kt">12</span>
+<span class="p">}</span>
 </code></pre></div>
 
 ---
@@ -1728,8 +1729,8 @@ TSDoc comments reserve the following comment syntax.
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
 <span class="cm"> * description</span>
 <span class="cm"> * @param {string} arg</span>
-<span class="cm"> */</span><span class="w"></span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">foo</span><span class="p">(</span><span class="nx">arg</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="cm"> */</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">foo</span><span class="p">(</span><span class="nx">arg</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div>
 
 Do **NOT** leave a title on the leading line (`/** foo`), TSDoc comments do not need to be titled. TSDoc comments are optional.
@@ -1763,10 +1764,10 @@ All variables where possible will use `const`, decreasing to `let` if needed. `v
 #### 3.2 Array Literals
 
 Arrays will be defined using `[]` exclusively.
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="s1">&#39;foo&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s1">&#39;foo&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </code></pre></div>
 
 ###### 3.2.1 Trailing Commas
@@ -1778,10 +1779,10 @@ Always use trailing commas when an array is on multiple lines. Single-line array
 ###### 3.2.2 Destructuring
 
 Destructuring of arrays is permitted and syntax should be that of tuples, including when using spreead arguments;
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">vec</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">items</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calculate</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">vec</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">items</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calculate</span><span class="p">();</span>
 </code></pre></div>
 Unused elements should be omitted so as to not polute the environment,
-<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">items</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calculate</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">items</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calculate</span><span class="p">();</span>
 </code></pre></div>
 
 ---
@@ -1804,17 +1805,17 @@ Always use trailing commas.
 ###### 3.3.2 Key Flavors
 
 Pick a single key flavor and stick with it, do not mix quoted/unquoted/symbollic keys. The following illustrates this;
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">42</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="s1">&#39;time_ms&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="nx">_000</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">[</span><span class="s2">&quot;time_ns&quot;</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="nx">_000_000</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="c1">// Instead:</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">42</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">time_ms</span><span class="o">:</span><span class="w"> </span><span class="kt">42_000</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">time_ns</span><span class="o">:</span><span class="w"> </span><span class="kt">42_000_000</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">42</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;time_ms&#39;</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="nx">_000</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="s2">&quot;time_ns&quot;</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="mf">42</span><span class="nx">_000_000</span>
+<span class="p">}</span>
+<span class="c1">// Instead:</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">42</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">time_ms</span><span class="o">:</span><span class="w"> </span><span class="kt">42_000</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">time_ns</span><span class="o">:</span><span class="w"> </span><span class="kt">42_000_000</span>
+<span class="p">}</span>
 </code></pre></div>
 
 ---
@@ -1823,12 +1824,12 @@ Pick a single key flavor and stick with it, do not mix quoted/unquoted/symbollic
 
 It is **forbidden** to use `methodName: () => foo` inside of an object literal, you **must** use `methodName() {}` shorthand instead.
 
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">42</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">foo</span><span class="p">(</span><span class="nx">otherTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="cm">/* ... */</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">42</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">foo</span><span class="p">(</span><span class="nx">otherTime</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* ... */</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">}</span>
 </code></pre></div>
 
 ---
@@ -1838,11 +1839,11 @@ It is **forbidden** to use `methodName: () => foo` inside of an object literal, 
 
 Enumerators (`enum`) should be used with static constants, all mission-critical enums should have all their mapped values stay static, so there will be no adding to the middle of an enum and suddenly breaking Production data. This also helps with readability.
 
-<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">ViewSetting</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">Panoramic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">Portrait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">Landscape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">ViewSetting</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Panoramic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Portrait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Landscape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span>
+<span class="p">}</span>
 </code></pre></div>
 
 ---
@@ -1857,39 +1858,39 @@ Classes should always be defined with the ES6 syntax `class Name {}`. Constructo
 ###### 3.5.1 Field Composition
 
 It is **NOT** allowed to mix Object Body/Constructor Fields if the constructor is collapsed or body-less.
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Example</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">bar</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="k">public</span><span class="w"> </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// This is **NOT** okay.</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="c1">// But,</span><span class="w"></span>
-<span class="kd">class</span><span class="w"> </span><span class="nx">Example2</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">bar</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="c1">// This is fine.</span><span class="w"></span>
-<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Example</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">bar</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="k">public</span><span class="w"> </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// This is **NOT** okay.</span>
+<span class="p">}</span>
+<span class="c1">// But,</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Example2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">bar</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="c1">// This is fine.</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
 ---
 
 ###### 3.5.2 Class Field Stack
 
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">E</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">thatOneBirthmarkOnMyBottom</span><span class="o">:</span><span class="w"> </span><span class="kt">Memory</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">loveForMyMother</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">E</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">thatOneBirthmarkOnMyBottom</span><span class="o">:</span><span class="w"> </span><span class="kt">Memory</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">loveForMyMother</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">nonoSquare</span><span class="o">:</span><span class="w"> </span><span class="kt">Region</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">deepestSecrets</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">nonoSquare</span><span class="o">:</span><span class="w"> </span><span class="kt">Region</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">deepestSecrets</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">socialSecurity</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nx">bankPin</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">socialSecurity</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nx">bankPin</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">birthday</span><span class="o">:</span><span class="w"> </span><span class="kt">Date</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">friends</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">birthday</span><span class="o">:</span><span class="w"> </span><span class="kt">Date</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">friends</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">;</span>
 
-<span class="w">    </span><span class="cm">/* then static, then methods */</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/* then static, then methods */</span>
+<span class="p">}</span>
 </code></pre></div>
 
 ---
@@ -1906,10 +1907,10 @@ All Top-Level functions should be Arrow Functions (`() => {}`), usage of braces 
 ###### 3.6.2 Trailing Commas in Parameters
 
 Trailing Commas should always be used when parameters are expanded. Single-line definitions are allowed optional commas.
-<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">bees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="nx">str</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="c1">// This comma is required.</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">bees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">str</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="c1">// This comma is required.</span>
+<span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{};</span>
 </code></pre></div>
 
 
@@ -1955,10 +1956,10 @@ Feel free to use `200_000` syntax with underscores delimiting every 3rd power of
 ###### 3.9.2 `try {} catch {}` statements
 
 Exceptions should only be used when it is possible for the block to throw any errors, and shouldn't be used for fun. Very importantly **always** leave a comment exactly as follows whenever you leave an error unhandled.
-<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* UNHANDLED ERROR */</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* UNHANDLED ERROR */</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 If an error should not be handled, leave an appropriate comment stating that;
-<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* Continue; we&#39;re okay if this didn&#39;t work */</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* Continue; we&#39;re okay if this didn&#39;t work */</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 
 ---
@@ -1973,18 +1974,18 @@ Fall-through is a very useful feature but can often lead to confusion, leave com
 
 Example:
 
-<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">1</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">case</span><span class="w"> </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="c1">// This fall through is okay and does not need to be commented.</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">input</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">1</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">case</span><span class="w"> </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="c1">// This fall through is okay and does not need to be commented.</span>
 <span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">3</span><span class="o">:</span><span class="w"> </span>
-<span class="w">        </span><span class="kt">code</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="cm">/* fall through */</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// This fall through needed to be commented as code has executed, it needs to be clear we&#39;re continuing downwards.</span><span class="w"></span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">4</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="kt">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nx">default</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="kt">handleNothing</span><span class="p">();</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="kt">code</span><span class="p">();</span>
+<span class="w">        </span><span class="cm">/* fall through */</span>
+<span class="w">        </span><span class="c1">// This fall through needed to be commented as code has executed, it needs to be clear we&#39;re continuing downwards.</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nx">4</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">break</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">default</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">handleNothing</span><span class="p">();</span>
+<span class="p">}</span>
 </code></pre></div>
 
 ###### 3.9.3.2 `default` block
@@ -2018,11 +2019,11 @@ Increment/Decrement *may* be used solely for integers, do not use `++` or `--` o
 
 Ternary statements should be constructed with `<condition> ? <ifTrue> : <ifFalse>`, wrapping them should always have the `?` and `:` leading their own lines, at one tab deeper than the start line of the condition.
 
-<div class="highlight"><pre><span></span><code><span class="nx">doFoo</span><span class="p">(</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">doFoo</span><span class="p">(</span>
 <span class="w">    </span><span class="nx">longConditionalExpression</span><span class="p">.</span><span class="nx">isValid</span><span class="p">()</span><span class="w"> </span>
-<span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;valid&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;valid&quot;</span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;error&quot;</span>
+<span class="p">);</span>
 </code></pre></div>
 
 ---
@@ -2032,11 +2033,11 @@ Ternary statements should be constructed with `<condition> ? <ifTrue> : <ifFalse
 
 Namespaces should never contain nested classes inline, please include them through (ugly but better) syntax:
 
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">FooCake</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">FooCake</span><span class="w"> </span><span class="p">{}</span>
 
-<span class="k">export</span><span class="w"> </span><span class="nx">namespace</span><span class="w"> </span><span class="nx">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Cake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">FooCake</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="nx">namespace</span><span class="w"> </span><span class="nx">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Cake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">FooCake</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 
 Any relevant Types should also be exported through Namespaces.
@@ -2190,7 +2191,7 @@ Using Singletons allows you to have a single overarching service, or some sort o
     <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>

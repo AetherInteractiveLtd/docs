@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/icon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13+insiders-4.31.0">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.527e139f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.b6d2c4d8.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -134,7 +134,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1621,6 +1621,7 @@
   
 
 
+
   <h1>EventListener</h1>
 
 <h2 id="using-blank-events">Using blank events</h2>
@@ -1641,27 +1642,27 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">MyEvents</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">genericEvent</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">change</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="nx">_default</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">];</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">MyEvents</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">genericEvent</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">change</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">];</span>
+<span class="w">    </span><span class="nx">_default</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">];</span>
+<span class="p">}</span>
 
-<span class="kd">class</span><span class="w"> </span><span class="nx">Foo</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">MyEvents</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Foo</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">MyEvents</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{}</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Foo</span><span class="p">();</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Foo</span><span class="p">();</span>
 
-<span class="nx">object</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;genericEvent&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// This listens to the `genericEvent` event.</span><span class="w"></span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;genericEvent&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// This listens to the `genericEvent` event.</span>
 
-<span class="nx">object</span><span class="p">.</span><span class="nx">when</span><span class="p">();</span><span class="w"> </span><span class="c1">// This listens to the `_default` event.</span><span class="w"></span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">when</span><span class="p">();</span><span class="w"> </span><span class="c1">// This listens to the `_default` event.</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </details>
 <h2 id="eventlistener"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18.21 0 .41.06.57.18l7.9 4.44c.32.17.53.5.53.88v9M12 4.15 6.04 7.5 12 10.85l5.96-3.35L12 4.15Z"/></svg></span> EventListener</h2>
-<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">do</span><span class="p">(</span><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">args</span><span class="o">:</span><span class="w"> </span><span class="kt">...unknown</span><span class="p">[])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="k">do</span><span class="p">(</span><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">args</span><span class="o">:</span><span class="w"> </span><span class="kt">...unknown</span><span class="p">[])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">unknown</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Runs a function in sequence, see <a href="#chainability">Chainability</a>.</p>
 <h4 id="parameters">Parameters</h4>
 <dl>
-<dt><code class="highlight"><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">args</span><span class="o">:</span><span class="w"> </span><span class="kt">...unknown</span><span class="p">[])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">unknown</span><span class="w"></span></code></dt>
+<dt><code class="highlight"><span class="nx">callback</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">args</span><span class="o">:</span><span class="w"> </span><span class="kt">...unknown</span><span class="p">[])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">unknown</span></code></dt>
 <dd>
 <p>The chained callback, it should receive the last returned value(s) and can return anything you want it to.</p>
 <p>Please note that whatever you return is what will be given to the next point in the chain.</p>
@@ -1669,24 +1670,24 @@
 </dl>
 <h4 id="returns">Returns</h4>
 <dl>
-<dt><a href="#eventlistener"><code class="highlight"><span class="nx">EventListener</span><span class="w"></span></code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span></a></dt>
+<dt><a href="#eventlistener"><code class="highlight"><span class="nx">EventListener</span></code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span></a></dt>
 <dd>
 <p>The same <a href="#eventlistener"><code>EventListener</code></a>.</p>
 </dd>
 </dl>
 <hr />
-<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="nx">condition</span><span class="p">(</span><span class="nx">cond</span><span class="o">:</span><span class="w"> </span><span class="kt">Condition</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"></span></code></strong></h3>
+<h3 id="markdown"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81L22 13.65Z"/></svg></span> <strong><code class="highlight"><span class="nx">condition</span><span class="p">(</span><span class="nx">cond</span><span class="o">:</span><span class="w"> </span><span class="kt">Condition</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span></code></strong></h3>
 <p>Runs a condition in sequence, see <a href="#chainability">Chainability</a>. If the condition fails, the chain will simply stop, if it succeeds, the chain will continue.</p>
 <h4 id="parameters_1">Parameters</h4>
 <dl>
-<dt><a href="../condition/"><code class="highlight"><span class="nx">cond</span><span class="o">:</span><span class="w"> </span><span class="kt">Condition</span><span class="w"></span></code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span></a></dt>
+<dt><a href="../condition/"><code class="highlight"><span class="nx">cond</span><span class="o">:</span><span class="w"> </span><span class="kt">Condition</span></code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span></a></dt>
 <dd>
 <p>The chained <a href="../condition/"><code>Condition</code></a>, it should receive the last returned value(s) and can return anything you want it to.</p>
 </dd>
 </dl>
 <h4 id="returns_1">Returns</h4>
 <dl>
-<dt><a href="#eventlistener"><code class="highlight"><span class="nx">EventListener</span><span class="w"></span></code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span></a></dt>
+<dt><a href="#eventlistener"><code class="highlight"><span class="nx">EventListener</span></code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"/></svg></span></a></dt>
 <dd>
 <p>The same <a href="#eventlistener"><code>EventListener</code></a>.</p>
 </dd>
@@ -1723,31 +1724,31 @@
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">MyEvents</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">thing</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">];</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">MyEvents</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">foo</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">thing</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">];</span>
+<span class="p">}</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">events</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">MyEvents</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// (1)!</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">events</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">MyEvents</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// (1)!</span>
 
-<span class="nx">events</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">thing</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">thing</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">correct</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">correct</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">10</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">10</span><span class="p">))</span><span class="w"></span>
-<span class="w">    </span><span class="cm">/* This will only continue if the number (4) is equal to 10.  */</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="cm">/* (2)! */</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kt">number</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">final</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">final</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// no return! (3)</span><span class="w"></span>
-<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="nx">events</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">thing</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">thing</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">correct</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">correct</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">10</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">condition</span><span class="p">(</span><span class="nx">COND</span><span class="p">.</span><span class="nx">create</span><span class="p">((</span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">10</span><span class="p">))</span>
+<span class="w">    </span><span class="cm">/* This will only continue if the number (4) is equal to 10.  */</span>
+<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="cm">/* (2)! */</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kt">number</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">final</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">final</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// no return! (3)</span>
+<span class="w">    </span><span class="p">});</span>
 
-<span class="nx">events</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mark&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// The console will see nothing.</span><span class="w"></span>
-<span class="nx">events</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Taylor&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">);</span><span class="w"> </span><span class="c1">// The console will see &quot;10&quot;.</span><span class="w"></span>
+<span class="nx">events</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mark&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// The console will see nothing.</span>
+<span class="nx">events</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Taylor&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">);</span><span class="w"> </span><span class="c1">// The console will see &quot;10&quot;.</span>
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>This isn't technically valid code as it isn't possible to instantiate an EventEmitter.</li>
@@ -1785,11 +1786,11 @@
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">EventEmitter</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">);</span>
 
-<span class="nx">event</span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">v</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">v</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span><span class="w"></span>
+<span class="nx">event</span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">v</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">v</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
 
-<span class="nx">event</span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="cm">/* (1)! */</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span><span class="w"></span>
+<span class="nx">event</span><span class="p">.</span><span class="k">do</span><span class="p">((</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="cm">/* (1)! */</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>This fails, typechecking will assume that you're receiving a <code>number</code> as the <code>EventListener</code> was not reassigned. In fact, you're receiving a <code>string</code>.</li>
@@ -1849,7 +1850,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8b5f7ebd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7ce0e818.min.js"></script>
       
     
   </body>
