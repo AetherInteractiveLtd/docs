@@ -224,7 +224,7 @@ export class QuerySystem extends System {
             position[entityId] = position[entityId].add(velocity[entityId]);
         };
     }
-})();
+};
 ```
 
 ## Putting it all together
