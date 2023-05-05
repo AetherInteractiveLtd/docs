@@ -58,7 +58,7 @@ Creates a namespace for organizing your state in a single place.
 
 ### :material-function-variant: **`#!typescript create<T>(value: T | (value?: T) => T): LocalState<T>`** { #markdown data-toc-label='create()' }
 
-Builds a new [`#!typescript LocalState`](#material-package-variant-closed-localstate) object.
+Builds a new [`#!typescript LocalState`](local.md) object.
 
 #### Parameters
 
@@ -74,7 +74,7 @@ Builds a new [`#!typescript LocalState`](#material-package-variant-closed-locals
 
 ### :material-function-variant: **`#!typescript global<T>(value: T | (value?: T) => T): GlobalState<T>`** { #markdown data-toc-label='global()' }
 
-Builds a new [`#!typescript GlobalState`](#material-package-variant-closed-globalstate) object.
+Builds a new [`#!typescript GlobalState`](global.md) object.
 
 #### Parameters
 
@@ -90,7 +90,7 @@ Builds a new [`#!typescript GlobalState`](#material-package-variant-closed-globa
 
 ### :material-function-variant: **`#!typescript player<T>(value: T | (value?: T) => T): PlayerState<T>`** { #markdown data-toc-label='player()' }
 
-Builds a new [`#!typescript PlayerState`](#material-package-variant-closed-playerstate) object.
+Builds a new [`#!typescript PlayerState`](player.md) object.
 
 #### Parameters
 
@@ -103,70 +103,6 @@ Builds a new [`#!typescript PlayerState`](#material-package-variant-closed-playe
 `#!typescript PlayerState<T>`
 
 : Returns the PlayerState object.
-
-### :material-package-variant-closed: LocalState
-
-#### :material-function-variant: **`#!typescript get(): T`** { #markdown data-toc-label='LocalState.get()' }
-
-##### Returns
-
-`#!typescript T`
-
-: Returns current state of type `T`.
-
-#### :material-function-variant: **`#!typescript set(setter: T | (oldValue?: T) => T): void`** { #markdown data-toc-label='LocalState.set()' }
-
-#### Parameters
-
-`#!typescript setter: T | (oldValue?: T) => T`
-
-: A setter, which sets the current state's value to the value passed/evaluated.
-
-### :material-package-variant-closed: GlobalState
-
-#### :material-function-variant: **`#!typescript get(): T`** { #markdown data-toc-label='GlobalState.get()' }
-
-##### Returns
-
-`#!typescript T`
-
-: Returns current global state of type `T`.
-
-#### :material-function-variant: **`#!typescript set(setter: T | (oldValue?: T) => T): void`** { #markdown data-toc-label='LocalState.set()' }
-
-#### Parameters
-
-`#!typescript setter: T | (oldValue?: T) => T`
-
-: A setter, which replicates the new value to all the clients.
-
-### :material-package-variant-closed: PlayerState
-
-#### :material-function-variant: **`#!typescript get(user: DefaultUserDeclaration): T`** { #markdown data-toc-label='GlobalState.get()' }
-
-#### Parameters
-
-`#!typescript user: DefaultUserDeclaration`
-
-: The User you want to retrieve their state from.
-
-##### Returns
-
-`#!typescript T`
-
-: Returns current player state of type `T`.
-
-#### :material-function-variant: **`#!typescript set(user: DefaultUserDeclaration, setter: T | (oldValue?: T) => T): void`** { #markdown data-toc-label='LocalState.set()' }
-
-#### Parameters
-
-`#!typescript user: DefaultUserDeclaration`
-
-: The User to set their State to the value passed.
-
-`#!typescript setter: T | (oldValue?: T) => T`
-
-: A setter, which replicates the new value to the specified User.
 
 !!! note "Subcriptions"
 

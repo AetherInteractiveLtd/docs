@@ -1,32 +1,32 @@
 site_name: Tina Framework
 theme:
   name: material
-  favicon: 'assets/icon.png'
-  logo: 'assets/docs_icon.png'
+  favicon: "assets/icon.png"
+  logo: "assets/docs_icon.png"
   palette:
     scheme: slate
     primary: deep purple
     accent: purple
   features:
-  - announce.dismiss
-  - content.code.annotate
-  - content.tabs.link
-  - content.tooltips
-  # - header.autohide
-  - navigation.expand
-  - navigation.indexes
-  # - navigation.instant
-  # - navigation.prune
-  - navigation.sections
-  - navigation.tabs
-  - navigation.tabs.sticky
-  - navigation.top
-  - navigation.tracking
-  - search.highlight
-  - search.share
-  - search.suggest
-  - toc.follow
-  - toc.integrate
+    - announce.dismiss
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    - navigation.expand
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
 
 extra_css:
   - stylesheets/extra.css
@@ -40,7 +40,7 @@ plugins:
       enabled: true
       post_date_format: full
       post_url_date_format: yyyy
-      post_url_format: '{date}/{slug}'
+      post_url_format: "{date}/{slug}"
       authors: true
 
 markdown_extensions:
@@ -60,50 +60,59 @@ markdown_extensions:
   - def_list
   - tables
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - footnotes
 
 nav:
-- Home: 'index.md'
+  - Home: "index.md"
 
-- API:
-  - 'Getting Started': 'api/api_docs.md'
-  - 'API Detail': 'api/coverage.md'
-  - 'Tina': 'api/tina.md'
-  - 'Condition': 'api/condition.md'
-  - 'Process': 'api/process.md'
-  - 'EventEmitter': 'api/event_emitter.md'
-  - 'EventListener': 'api/event_listener.md'
-  - ECS:
-    - 'Component': 'api/ecs/component.md'
-    - 'Query': 'api/ecs/query.md'
-    - 'System': 'api/ecs/system.md'
-    - 'World': 'api/ecs/world.md'
-  - Extras:
-    - 'api/types/manifest.md'
+  - API:
+      - "Getting Started": "api/api_docs.md"
+      - "API Detail": "api/coverage.md"
+      - "Tina": "api/tina.md"
+      - "Condition": "api/condition.md"
+      - "Process": "api/process.md"
+      - "EventEmitter": "api/event_emitter.md"
+      - "EventListener": "api/event_listener.md"
+      - "State": "api/state.md"
 
-- Tina Guide:
-  - 'The Philosophy': 'intro/tina/philosophy.md'
-  - 'Getting Started': 'intro/tina/start.md'
-  - 'Main Features': 'intro/tina/core.md'
+      - State:
+          - "Namespace/Create": "api/state/namespace.md"
+          - "LocalState": "api/state/local.md"
+          - "GlobalState": "api/state/global.md"
+          - "PlayerState": "api/state/player.md"
 
-  - Lib:
-    - 'Events': 'intro/tina/libraries/events.md'
-    - 'Conditions': 'intro/tina/libraries/conditions.md'
-    - 'Processes': 'intro/tina/libraries/processes.md'
+      - ECS:
+          - "Component": "api/ecs/component.md"
+          - "Query": "api/ecs/query.md"
+          - "System": "api/ecs/system.md"
+          - "World": "api/ecs/world.md"
 
-  - ECS:
-    - 'Entity Component System': 'intro/tina/ecs/ecs.md'
-    - 'Design Motivation': 'intro/tina/ecs/design.md'
-    - 'The Future': 'intro/tina/ecs/future.md'
-    - 'Snippets': 'intro/tina/ecs/vs-code-snippets.md'
-    - 'Best Practices': 'intro/tina/ecs/best-practices.md'
+      - Extras:
+          - "api/types/manifest.md"
 
-  - 'Networking': 'intro/tina/libraries/net/net.md'
+  - Tina Guide:
+      - "The Philosophy": "intro/tina/philosophy.md"
+      - "Getting Started": "intro/tina/start.md"
+      - "Main Features": "intro/tina/core.md"
 
-- Style Guide: 'intro/styleguide.md'
+      - Lib:
+          - "Events": "intro/tina/libraries/events.md"
+          - "Conditions": "intro/tina/libraries/conditions.md"
+          - "Processes": "intro/tina/libraries/processes.md"
 
-- Blog: 'blog/index.md'
+      - ECS:
+          - "Entity Component System": "intro/tina/ecs/ecs.md"
+          - "Design Motivation": "intro/tina/ecs/design.md"
+          - "The Future": "intro/tina/ecs/future.md"
+          - "Snippets": "intro/tina/ecs/vs-code-snippets.md"
+          - "Best Practices": "intro/tina/ecs/best-practices.md"
+
+      - "Networking": "intro/tina/libraries/net/net.md"
+
+  - Style Guide: "intro/styleguide.md"
+
+  - Blog: "blog/index.md"
