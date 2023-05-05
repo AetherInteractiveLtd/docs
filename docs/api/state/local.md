@@ -26,10 +26,10 @@ icon: material/cube
         import Tina, { State } from "@rbxts/tina";
 
         const StateTree = Tina.buildState({
-            global: State.namespace({
+            local: State.namespace({
                 gameIsRunning: State.create(false),
             }),
         })
 
-        StateTree.global.gameIsRunning.set(true);
+        StateTree.local.gameIsRunning.set(true);
     ```
