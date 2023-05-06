@@ -1,0 +1,35 @@
+---
+icon: material/cube
+---
+
+## :material-package-variant-closed: LocalState
+
+### :material-function-variant: **`#!typescript get(): T`** { #markdown data-toc-label='get()' }
+
+#### Returns
+
+`#!typescript T`
+
+: Returns current state of type `T`.
+
+### :material-function-variant: **`#!typescript set(setter: T | (oldValue?: T) => T): void`** { #markdown data-toc-label='set()' }
+
+#### Parameters
+
+`#!typescript setter: T | (oldValue?: T) => T`
+
+: A setter, which sets the current state's value to the value passed/evaluated.
+
+!!! example "Example"
+
+    ```typescript linenums="1"
+        import Tina, { State } from "@rbxts/tina";
+
+        const StateTree = Tina.buildState({
+            local: State.namespace({
+                gameIsRunning: State.create(false),
+            }),
+        })
+
+        StateTree.local.gameIsRunning.set(true);
+    ```
