@@ -4,7 +4,7 @@ icon: material/cube
 
 ## :material-package-variant-closed: LocalState
 
-### :material-function-variant: **`#!typescript get(): T`** { #markdown data-toc-label='LocalState.get()' }
+### :material-function-variant: **`#!typescript get(): T`** { #markdown data-toc-label='get()' }
 
 #### Returns
 
@@ -12,7 +12,7 @@ icon: material/cube
 
 : Returns current state of type `T`.
 
-### :material-function-variant: **`#!typescript set(setter: T | (oldValue?: T) => T): void`** { #markdown data-toc-label='LocalState.set()' }
+### :material-function-variant: **`#!typescript set(setter: T | (oldValue?: T) => T): void`** { #markdown data-toc-label='set()' }
 
 #### Parameters
 

@@ -4,6 +4,8 @@ icon: material/cube
 
 ## :material-package-variant-closed: State
 
+_"State commonly refers to either the present condition of a system or entity"_. The current status of your data. Managing/keeping track of this mutable (not required to mutate though) state it's somewhat necessary, State also should be created once and used among all your project, you shouldn't be creating/building it dynamically.
+
 ### :material-function-variant: **`#!typescript namespace(stateTree: object): object`** { #markdown data-toc-label='namespace()' }
 
 Creates a namespace for organizing your state in a single place.
@@ -20,41 +22,37 @@ Creates a namespace for organizing your state in a single place.
 
 : It returns the object passed to it for access later on.
 
-!!! warning "Have in mind"
-
-    It is important that you only store state objects within your State Tree, storing any other value may result in not intended behavior.
-
-    !!! example "Example"
-
-        ```typescript linenums="1"
-            import { State } from "@rbxts/tina";
-
-            const StateTree = State.namespace({
-                myState: 0, // Not valid.
-            });
-        ```
-
 !!! tip "Organization"
 
     Organizing State is hard, having too deep and complicated routes like `StateTree.local.game.round.time` can pollute rapidly your codebase. We recommend and encourage to split up your state when possible.
 
-    !!! example "Example"
+    ```typescript linenums="1"
+    import Tina, { State } from "@rbxts/tina";
+
+    const PlayerState = Tina.buildState({
+        inventory: State.player<InventoryScheme>(),
+    });
+
+    const GameState = Tina.buildState({
+        roundInfo: State.namespace({
+            time: State.create(0),
+        }),
+    });
+    ```
+
+    It is also recommended that you use `Tina.buildState()` when declaring a new State Tree.
+
+    ??? warning "Have in mind"
+
+        It is important that you only store state objects within your State Tree, storing any other value may result in not intended behavior.
 
         ```typescript linenums="1"
-            import Tina, { State } from "@rbxts/tina";
+        import { State } from "@rbxts/tina";
 
-            const PlayerState = Tina.buildState({
-                inventory: State.player<InventoryScheme>(),
-            });
-
-            const GameState = Tina.buildState({
-                roundInfo: State.namespace({
-                    time: State.create(0),
-                }),
-            });
+        const StateTree = State.namespace({
+            myState: 0, // Not valid.
+        });
         ```
-
-        It is also recommended that you use `Tina.buildState()` when declaring a new StateTree, as it will make sense and not only having a namespace holding state.
 
 ### :material-function-variant: **`#!typescript create<T>(value: T | (value?: T) => T): LocalState<T>`** { #markdown data-toc-label='create()' }
 
@@ -106,26 +104,24 @@ Builds a new [`#!typescript PlayerState`](player.md) object.
 
 !!! note "Subcriptions"
 
-    Subscriptions to State are possible, this opens the possibility to hear for changes on your State tree (at individual points).
+    Subscriptions to State are possible, this opens the possibility to hear for changes on your State Tree (at individual points).
 
-    ??? example "Example"
+    ```typescript linenums="1"
+    import Tina, { State } from "@rbxts/tina";
 
-        ```typescript linenums="1"
-            import Tina, { State } from "@rbxts/tina";
+    const StateTree = Tina.buildState({
+        testing: State.create(0),
+    });
 
-            const StateTree = Tina.buildState({
-                testing: State.create(0),
-            });
+    StateTree.testing.when().do((oldValue: number) => {
+        // Handle state change
+    });
 
-            StateTree.testing.when().do((oldValue: number) => {
-                // Handle state change
-            });
+    StateTree.testing.set((oldValue) => {
+        return oldValue + 1;
+    });
+    ```
 
-            StateTree.testing.set((oldValue) => {
-                return oldValue + 1;
-            });
-        ```
+    ??? tip "Same to EventListeners"
 
-        !!! tip "Same to EventListeners"
-
-            You can see the way to subscribe to your State it's similar to EventListeners, thus meaning you can take advantage of some other methods such as `.cond()` & `.await()`.
+        You can see the way to subscribe to your State it's similar to EventListeners, thus meaning you can take advantage of some other methods such as `.cond()` & `.await()`.

@@ -23,13 +23,13 @@ icon: material/cube
 !!! example "Example"
 
     ```typescript linenums="1"
-        import Tina, { State } from "@rbxts/tina";
+    import Tina, { State } from "@rbxts/tina";
 
-        const StateTree = Tina.buildState({
-            global: State.namespace({
-                round: State.global(0),
-            }),
-        })
+    const StateTree = Tina.buildState({
+        global: State.namespace({
+            round: State.global(0),
+        }),
+    })
 
-        StateTree.global.round.set(1);
+    StateTree.global.round.set(1);
     ```

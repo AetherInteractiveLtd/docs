@@ -4,7 +4,7 @@ icon: material/cube
 
 ## :material-package-variant-closed: PlayerState
 
-### :material-function-variant: **`#!typescript get(user: DefaultUserDeclaration): T`** { #markdown data-toc-label='GlobalState.get()' }
+### :material-function-variant: **`#!typescript get(user: DefaultUserDeclaration): T`** { #markdown data-toc-label='get' }
 
 #### Parameters
 
@@ -18,7 +18,7 @@ icon: material/cube
 
 : Returns current player state of type `T`.
 
-### :material-function-variant: **`#!typescript set(user: DefaultUserDeclaration, setter: T | (oldValue?: T) => T): void`** { #markdown data-toc-label='LocalState.set()' }
+### :material-function-variant: **`#!typescript set(user: DefaultUserDeclaration, setter: T | (oldValue?: T) => T): void`** { #markdown data-toc-label='set' }
 
 #### Parameters
 
@@ -33,15 +33,15 @@ icon: material/cube
 !!! example "Example"
 
     ```typescript linenums="1"
-        import Tina, { State, Users } from "@rbxts/tina";
+    import Tina, { State, Users } from "@rbxts/tina";
 
-        const StateTree = Tina.buildState({
-            player: State.namespace({
-                inventory: State.player<InventoryScheme>(),
-            }),
-        })
+    const StateTree = Tina.buildState({
+        player: State.namespace({
+            inventory: State.player<InventoryScheme>(),
+        }),
+    })
 
-        StateTree.player.inventory.set(...);
+    StateTree.player.inventory.set(...);
 
-        StateTree.player.inventory.get(Users.get(playerReference));
+    StateTree.player.inventory.get(Users.get(playerReference));
     ```
